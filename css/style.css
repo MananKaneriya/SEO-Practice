@@ -13,5 +13,11 @@ a { color: #2563eb; }
 .towns { color: #555; font-size: 15px; }
 .faq dt { font-weight: 600; margin-top: 12px; }
 .faq dd { margin-left: 0; }
-.todo { background: #fff7d6; border-left: 4px solid #f2b705; padding: 8px 12px; }
+.button { display: inline-block; background: #2563eb; color: #fff; padding: 10px 20px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; }
+.button:hover { background: #1d4ed8; }
+.features, .steps { padding-left: 22px; }
+.features li, .steps li { margin-bottom: 8px; }
+.demo-form label { display: block; font-weight: 600; margin-bottom: 4px; }
+.demo-form input, .demo-form select, .demo-form textarea { width: 100%; max-width: 520px; padding: 8px 10px; font: inherit; border: 1px solid #bbb; border-radius: 6px; }
+.form-note { font-size: 14px; color: #666; }
 @media (max-width: 640px) { .areas { columns: 2; } h1 { font-size: 26px; } }
