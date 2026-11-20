@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://www.example.com/sitemap.xml
+Sitemap: https://seo-practice.vercel.app/sitemap.xml

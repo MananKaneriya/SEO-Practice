@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- BASIC SEO – what Google reads first: title and description (your search-result snippet), keywords, robots rule, author and the canonical (preferred) URL -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[Brand] – [Product 1] &amp; [Product 2] Manufacturer in Gujarat</title>
-  <meta name="description" content="[Brand] manufactures [Product 1] and [Product 2] and supplies them across Gujarat. See the cities and areas we serve.">
+  <title>[Brand] – [Product 1] & [Product 2] Manufacturer in Gujarat</title>
+  <meta name="description" content="[Brand] manufactures [Product 1] and [Product 2] and supplies them across all of Gujarat. See the cities and areas we serve and request a quote today.">
+  <meta name="keywords" content="[Product 1] manufacturer Gujarat, [Product 2] manufacturer Gujarat, [Product 1] supplier Gujarat, [Product 2] supplier Gujarat, [Brand]">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="author" content="[Brand]">
+  <link rel="canonical" href="https://seo-practice.vercel.app/">
+
+  <!-- OPEN GRAPH – controls the preview card when the page is shared on Facebook, WhatsApp, LinkedIn, etc. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="[Brand]">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:title" content="[Brand] – [Product 1] &amp; [Product 2] Manufacturer in Gujarat">
+  <meta property="og:description" content="Manufacturer of [Product 1] and [Product 2] delivering to all 34 districts of Gujarat. Find your city and get a quote.">
+  <meta property="og:url" content="https://seo-practice.vercel.app/">
+  <meta property="og:image" content="https://seo-practice.vercel.app/images/og/home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="[Brand] – [Product 1] and [Product 2] manufacturer in Gujarat">
+
+  <!-- TWITTER – the same idea as Open Graph, for share cards on X / Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[Brand] – [Product 1] &amp; [Product 2] Manufacturer in Gujarat">
+  <meta name="twitter:description" content="Manufacturer of [Product 1] and [Product 2] delivering to all 34 districts of Gujarat. Find your city and get a quote.">
+  <meta name="twitter:image" content="https://seo-practice.vercel.app/images/og/home.jpg">
+
+  <!-- STYLESHEET – page design only, not SEO -->
   <link rel="stylesheet" href="/css/style.css">
+
+  <!-- STRUCTURED DATA – JSON-LD that tells Google the breadcrumb trail -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://seo-practice.vercel.app/"}
+    ]
+  }
+  </script>
 </head>
 <body>
 <header>
   <a href="/">[Brand]</a>
   <a href="/locations/gujarat/">Areas We Serve</a>
 </header>
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  Home
+</nav>
 <main>
   <h1>[Brand] – [Product 1] &amp; [Product 2] Manufacturer</h1>
   <p>Practice home page. Start here: <a href="/locations/gujarat/">Areas We Serve in Gujarat</a></p>

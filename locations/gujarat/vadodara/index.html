@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- BASIC SEO – what Google reads first: title and description (your search-result snippet), keywords, robots rule, author and the canonical (preferred) URL -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[Product 1] &amp; [Product 2] in Vadodara | [Brand]</title>
+  <title>[Product 1] & [Product 2] in Vadodara | [Brand]</title>
   <meta name="description" content="Buy [Product 1] &amp; [Product 2] in Vadodara. Fast delivery to Alkapuri, Akota, Gotri &amp; all of Vadodara. Call for a quote.">
-  <link rel="canonical" href="https://www.example.com/locations/gujarat/vadodara/">
+  <meta name="keywords" content="[Product 1] Vadodara, [Product 2] Vadodara, [Product 1] supplier Vadodara, [Product 1] dealer Vadodara">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="author" content="[Brand]">
+  <link rel="canonical" href="https://seo-practice.vercel.app/locations/gujarat/vadodara/">
+
+  <!-- OPEN GRAPH – controls the preview card when the page is shared on Facebook, WhatsApp, LinkedIn, etc. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="[Brand]">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:title" content="[Product 1] &amp; [Product 2] Supplier in Vadodara | [Brand]">
+  <meta property="og:description" content="[Product 1] &amp; [Product 2] delivered across Vadodara. See areas we serve, dealers and projects.">
+  <meta property="og:url" content="https://seo-practice.vercel.app/locations/gujarat/vadodara/">
+  <meta property="og:image" content="https://seo-practice.vercel.app/images/og/product-1-vadodara.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="[Product 1] delivered to a project in Vadodara">
+
+  <!-- TWITTER – the same idea as Open Graph, for share cards on X / Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[Product 1] &amp; [Product 2] Supplier in Vadodara | [Brand]">
+  <meta name="twitter:description" content="[Product 1] &amp; [Product 2] delivered across Vadodara. See areas we serve, dealers and projects.">
+  <meta name="twitter:image" content="https://seo-practice.vercel.app/images/og/product-1-vadodara.jpg">
+
+  <!-- STYLESHEET – page design only, not SEO -->
   <link rel="stylesheet" href="/css/style.css">
+
+  <!-- STRUCTURED DATA – JSON-LD that tells Google the breadcrumb trail -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.example.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Gujarat", "item": "https://www.example.com/locations/gujarat/"},
-      {"@type": "ListItem", "position": 3, "name": "Vadodara", "item": "https://www.example.com/locations/gujarat/vadodara/"}
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://seo-practice.vercel.app/"},
+      {"@type": "ListItem", "position": 2, "name": "Gujarat", "item": "https://seo-practice.vercel.app/locations/gujarat/"},
+      {"@type": "ListItem", "position": 3, "name": "Vadodara", "item": "https://seo-practice.vercel.app/locations/gujarat/vadodara/"}
     ]
   }
   </script>

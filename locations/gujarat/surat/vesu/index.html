@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- BASIC SEO – what Google reads first: title and description (your search-result snippet), keywords, robots rule, author and the canonical (preferred) URL -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[Product 1] in Vesu, Surat | [Brand]</title>
   <meta name="description" content="[Product 1] &amp; [Product 2] supplier near Vesu, Surat. See local projects, dealer address &amp; delivery time.">
-  <link rel="canonical" href="https://www.example.com/locations/gujarat/surat/vesu/">
+  <meta name="keywords" content="[Product 1] Vesu, [Product 1] Vesu Surat, [Product 2] Vesu, [Product 1] dealer near Vesu">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="author" content="[Brand]">
+  <link rel="canonical" href="https://seo-practice.vercel.app/locations/gujarat/surat/vesu/">
+
+  <!-- OPEN GRAPH – controls the preview card when the page is shared on Facebook, WhatsApp, LinkedIn, etc. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="[Brand]">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:title" content="[Product 1] &amp; [Product 2] in Vesu, Surat | [Brand]">
+  <meta property="og:description" content="Nearest dealer, projects and fast delivery of [Product 1] &amp; [Product 2] in Vesu, Surat.">
+  <meta property="og:url" content="https://seo-practice.vercel.app/locations/gujarat/surat/vesu/">
+  <meta property="og:image" content="https://seo-practice.vercel.app/images/og/product-1-vesu-surat.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="[Product 1] used in a home in Vesu, Surat">
+
+  <!-- TWITTER – the same idea as Open Graph, for share cards on X / Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="[Product 1] &amp; [Product 2] in Vesu, Surat | [Brand]">
+  <meta name="twitter:description" content="Nearest dealer, projects and fast delivery of [Product 1] &amp; [Product 2] in Vesu, Surat.">
+  <meta name="twitter:image" content="https://seo-practice.vercel.app/images/og/product-1-vesu-surat.jpg">
+
+  <!-- STYLESHEET – page design only, not SEO -->
   <link rel="stylesheet" href="/css/style.css">
+
+  <!-- STRUCTURED DATA – JSON-LD that tells Google the breadcrumb trail -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.example.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Gujarat", "item": "https://www.example.com/locations/gujarat/"},
-      {"@type": "ListItem", "position": 3, "name": "Surat", "item": "https://www.example.com/locations/gujarat/surat/"},
-      {"@type": "ListItem", "position": 4, "name": "Vesu", "item": "https://www.example.com/locations/gujarat/surat/vesu/"}
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://seo-practice.vercel.app/"},
+      {"@type": "ListItem", "position": 2, "name": "Gujarat", "item": "https://seo-practice.vercel.app/locations/gujarat/"},
+      {"@type": "ListItem", "position": 3, "name": "Surat", "item": "https://seo-practice.vercel.app/locations/gujarat/surat/"},
+      {"@type": "ListItem", "position": 4, "name": "Vesu", "item": "https://seo-practice.vercel.app/locations/gujarat/surat/vesu/"}
     ]
   }
   </script>
