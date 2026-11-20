@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.example.com/locations/gujarat/</loc></url>
+  <url><loc>https://www.example.com/locations/gujarat/ahmedabad/</loc></url>
+  <url><loc>https://www.example.com/locations/gujarat/ahmedabad/sg-highway/</loc></url>
+  <url><loc>https://www.example.com/locations/gujarat/ahmedabad/bopal/</loc></url>
+  <url><loc>https://www.example.com/locations/gujarat/surat/</loc></url>
+  <url><loc>https://www.example.com/locations/gujarat/surat/vesu/</loc></url>
+  <url><loc>https://www.example.com/locations/gujarat/vadodara/</loc></url>
+  <url><loc>https://www.example.com/locations/gujarat/rajkot/</loc></url>
+</urlset>

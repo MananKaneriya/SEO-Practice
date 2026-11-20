@@ -1,0 +1,17 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, Arial, sans-serif; line-height: 1.6; color: #222; }
+header, footer { background: #1f2937; color: #fff; padding: 14px 24px; }
+header a, footer a { color: #fff; margin-right: 16px; text-decoration: none; }
+main { max-width: 960px; margin: 0 auto; padding: 24px; }
+.breadcrumb { font-size: 14px; color: #666; max-width: 960px; margin: 0 auto; padding: 12px 24px 0; }
+.breadcrumb a { color: #2563eb; }
+h1 { font-size: 32px; line-height: 1.25; }
+h2 { margin-top: 36px; border-bottom: 2px solid #eee; padding-bottom: 6px; }
+h3 { margin-bottom: 4px; }
+a { color: #2563eb; }
+.areas { columns: 3; padding-left: 18px; }
+.towns { color: #555; font-size: 15px; }
+.faq dt { font-weight: 600; margin-top: 12px; }
+.faq dd { margin-left: 0; }
+.todo { background: #fff7d6; border-left: 4px solid #f2b705; padding: 8px 12px; }
+@media (max-width: 640px) { .areas { columns: 2; } h1 { font-size: 26px; } }
