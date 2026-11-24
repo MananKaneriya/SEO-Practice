@@ -29,8 +29,12 @@
   <meta name="twitter:description" content="Capture and follow up every lead from your SG Highway office or showroom. Free demo.">
   <meta name="twitter:image" content="https://seo-practice.vercel.app/images/og/whatsapp-chatbot-crm-sg-highway-ahmedabad.jpg">
 
-  <!-- STYLESHEET – page design only, not SEO -->
+  <!-- STYLESHEET – page design only, not SEO. Fonts: Inter + Geist Mono (display=swap). Script: clock, menu, FAQ accordion, fade-up -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter:wght@400;500&display=swap">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/site.js" defer></script>
 
   <!-- STRUCTURED DATA – JSON-LD that tells Google the service you offer in this area, the breadcrumb trail and the FAQs -->
   <script type="application/ld+json">
@@ -118,13 +122,21 @@
 </head>
 <body>
 
-<header>
-  <a href="/">Ortheon AI</a>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="/">Ortheon AI</a>
+    <div class="site-header__menu" id="site-menu">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/ai-app-1/">AI App 1</a>
+        <a href="/ai-app-2/">AI App 2</a>
+        <a href="/locations/gujarat/" aria-current="true">Areas We Serve</a>
+        <a href="/articles/">Articles</a>
+      </nav>
+      <span class="clock" aria-hidden="true"><span class="clock__dot"></span><span class="clock__label">AHMEDABAD</span> <span data-clock>--:--:--</span> IST</span>
+    </div>
+    <a class="button button--sm" href="/contact/">Book a Free Demo</a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span></button>
+  </div>
 </header>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -132,57 +144,87 @@
 </nav>
 
 <main>
-  <h1>WhatsApp AI Chatbot &amp; CRM for Businesses on SG Highway, Ahmedabad</h1>
-  <p>SG Highway is Ahmedabad's main commercial corridor, with corporate offices, IT and service companies, car and furniture showrooms, developers and hospitals. A business here rarely gets leads from a single source. The website, Google Ads, IndiaMART and walk-ins all bring enquiries at once, and in that mix the good ones are easy to lose.</p>
-  <p><a class="button" href="/contact/">Book a free demo</a></p>
+  <section class="page-hero">
+    <div class="hero__inner">
+      <h1>WhatsApp AI Chatbot &amp; CRM for Businesses on SG Highway, Ahmedabad</h1>
+      <p>SG Highway is Ahmedabad's main commercial corridor, with corporate offices, IT and service companies, car and furniture showrooms, developers and hospitals. A business here rarely gets leads from a single source. The website, Google Ads, IndiaMART and walk-ins all bring enquiries at once, and in that mix the good ones are easy to lose.</p>
+      <p><a class="button" href="/contact/">Book a free demo</a></p>
+    </div>
+    <svg class="hero__target" viewBox="0 0 800 800" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true" focusable="false">
+      <g class="ring-spin"><circle cx="400" cy="400" r="392" stroke-width="10" stroke-dasharray="1 19.53"/></g>
+      <circle cx="400" cy="400" r="364"/>
+      <g class="ring-spin ring-spin--rev"><circle cx="400" cy="400" r="292" stroke-dasharray="2 9"/></g>
+      <circle cx="400" cy="400" r="212"/>
+      <circle cx="400" cy="400" r="124"/>
+      <path d="M0 400H236M564 400H800M400 0V236M400 564V800"/>
+      <path d="M376 400H424M400 376V424"/>
+      <circle cx="400" cy="400" r="5"/>
+    </svg>
+  </section>
 
-  <h2>AI App 1 for SG Highway Offices &amp; Showrooms</h2>
-  <p><a href="/ai-app-1/">AI App 1</a> answers questions on WhatsApp, website chat and Instagram 24/7, in English, Hindi and Gujarati, using your own service lists, price lists, FAQs and brochures. It collects the basics of each enquiry, such as what the customer is looking for and how to reach them, so that your salesperson's first call starts with context instead of a blank page. It also books appointments and showroom visits, sends reminders, and passes the chat to a member of your team when a person is needed.</p>
+  <section class="section" data-label="AI App 1">
+    <h2>AI App 1 for SG Highway Offices &amp; Showrooms</h2>
+    <p><a href="/ai-app-1/">AI App 1</a> answers questions on WhatsApp, website chat and Instagram 24/7, in English, Hindi and Gujarati, using your own service lists, price lists, FAQs and brochures. It collects the basics of each enquiry, such as what the customer is looking for and how to reach them, so that your salesperson's first call starts with context instead of a blank page. It also books appointments and showroom visits, sends reminders, and passes the chat to a member of your team when a person is needed.</p>
+  </section>
 
-  <h2>AI App 2 – Lead Scoring &amp; Follow-up for Sales Teams</h2>
-  <p>Many SG Highway teams handle online leads and personal visits side by side. <a href="/ai-app-2/">AI App 2</a> collects the online ones from website forms, WhatsApp, IndiaMART, Facebook and Google Ads into a single pipeline and scores each lead hot, warm or cold, so attention goes to the people most likely to buy. Automatic reminders and WhatsApp and email templates keep follow-ups on schedule, it can draft a quotation or proposal from a short note, and managers see a daily sales report.</p>
+  <section class="section" data-label="AI App 2">
+    <h2>AI App 2 – Lead Scoring &amp; Follow-up for Sales Teams</h2>
+    <p>Many SG Highway teams handle online leads and personal visits side by side. <a href="/ai-app-2/">AI App 2</a> collects the online ones from website forms, WhatsApp, IndiaMART, Facebook and Google Ads into a single pipeline and scores each lead hot, warm or cold, so attention goes to the people most likely to buy. Automatic reminders and WhatsApp and email templates keep follow-ups on schedule, it can draft a quotation or proposal from a short note, and managers see a daily sales report.</p>
+  </section>
 
-  <h2>Types of Businesses We Help on SG Highway</h2>
-  <ul class="features">
-    <li><strong>Corporate offices and service companies:</strong> answer routine client questions automatically and keep every new enquiry on a visible follow-up list.</li>
-    <li><strong>IT firms:</strong> capture leads from the website and ads, and keep long proposal cycles moving with timely reminders.</li>
-    <li><strong>Car and furniture showrooms:</strong> reply to price and availability questions at any hour and book showroom visits.</li>
-    <li><strong>Developers:</strong> sort buyer enquiries by how ready they are, and schedule site visits without back-and-forth messages.</li>
-    <li><strong>Hospitals:</strong> answer common questions about services and timings, and book appointments with reminders.</li>
-  </ul>
+  <section class="section" data-label="Industries">
+    <h2>Types of Businesses We Help on SG Highway</h2>
+    <ul class="features">
+      <li><strong>Corporate offices and service companies:</strong> answer routine client questions automatically and keep every new enquiry on a visible follow-up list.</li>
+      <li><strong>IT firms:</strong> capture leads from the website and ads, and keep long proposal cycles moving with timely reminders.</li>
+      <li><strong>Car and furniture showrooms:</strong> reply to price and availability questions at any hour and book showroom visits.</li>
+      <li><strong>Developers:</strong> sort buyer enquiries by how ready they are, and schedule site visits without back-and-forth messages.</li>
+      <li><strong>Hospitals:</strong> answer common questions about services and timings, and book appointments with reminders.</li>
+    </ul>
+  </section>
 
-  <h2>Setup &amp; Support Near SG Highway</h2>
-  <p>Teams along SG Highway often work in shifts across several floors, so we plan setup, staff training and support online around your working day. We begin with a free demo, connect your channels and lead sources, and train your people over video call. When you prefer a visit, on-site onboarding is available in Ahmedabad.</p>
-  <p><a class="button" href="/contact/">Book a free demo</a></p>
+  <section class="section" data-label="Setup &amp; support">
+    <h2>Setup &amp; Support Near SG Highway</h2>
+    <p>Teams along SG Highway often work in shifts across several floors, so we plan setup, staff training and support online around your working day. We begin with a free demo, connect your channels and lead sources, and train your people over video call. When you prefer a visit, on-site onboarding is available in Ahmedabad.</p>
+    <p><a class="button" href="/contact/">Book a free demo</a></p>
+  </section>
 
-  <h2>Nearby Areas We Serve</h2>
-  <ul>
-    <li><a href="/locations/gujarat/ahmedabad/bopal/">Bopal</a></li>
-    <li>Bodakdev</li>
-    <li>Thaltej</li>
-    <li>Prahlad Nagar</li>
-    <li>Science City</li>
-  </ul>
+  <section class="section" data-label="Areas we serve">
+    <h2>Nearby Areas We Serve</h2>
+    <ul class="tags">
+      <li><a href="/locations/gujarat/ahmedabad/bopal/">Bopal</a></li>
+      <li>Bodakdev</li>
+      <li>Thaltej</li>
+      <li>Prahlad Nagar</li>
+      <li>Science City</li>
+    </ul>
+  </section>
 
-  <h2>FAQs – AI CRM on SG Highway</h2>
-  <dl class="faq">
-    <dt>Can AI App 2 bring my website, Google Ads and IndiaMART leads into one list?</dt>
-    <dd>Yes. AI App 2 collects leads from website forms, WhatsApp, IndiaMART, Facebook and Google Ads in one place and scores each one hot, warm or cold, so your sales team can see which leads to call first.</dd>
-    <dt>Can the chatbot qualify an enquiry before my salesperson calls the customer?</dt>
-    <dd>AI App 1 answers the customer's first questions on WhatsApp, website chat or Instagram and notes what they are looking for, so the salesperson who picks up the lead already has context. Chats that need a person are handed to your staff.</dd>
-    <dt>Can your team set up the apps for our SG Highway office or showroom?</dt>
-    <dd>Yes. We set up the apps online and train your staff on a video call, and on-site onboarding is available in Ahmedabad if you would like us to visit your SG Highway office or showroom.</dd>
-  </dl>
-
-  <p><a href="/locations/gujarat/ahmedabad/">← All areas in Ahmedabad</a></p>
+  <section class="section" data-label="FAQ">
+    <h2>FAQs – AI CRM on SG Highway</h2>
+    <dl class="faq">
+      <dt>Can AI App 2 bring my website, Google Ads and IndiaMART leads into one list?</dt>
+      <dd>Yes. AI App 2 collects leads from website forms, WhatsApp, IndiaMART, Facebook and Google Ads in one place and scores each one hot, warm or cold, so your sales team can see which leads to call first.</dd>
+      <dt>Can the chatbot qualify an enquiry before my salesperson calls the customer?</dt>
+      <dd>AI App 1 answers the customer's first questions on WhatsApp, website chat or Instagram and notes what they are looking for, so the salesperson who picks up the lead already has context. Chats that need a person are handed to your staff.</dd>
+      <dt>Can your team set up the apps for our SG Highway office or showroom?</dt>
+      <dd>Yes. We set up the apps online and train your staff on a video call, and on-site onboarding is available in Ahmedabad if you would like us to visit your SG Highway office or showroom.</dd>
+    </dl>
+    <p><a class="link-arrow link-arrow--back" href="/locations/gujarat/ahmedabad/">← All areas in Ahmedabad</a></p>
+  </section>
 </main>
 
-<footer>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/ai-app-1/">AI App 1</a>
+      <a href="/ai-app-2/">AI App 2</a>
+      <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
+      <a href="/articles/">Articles</a>
+      <a href="/contact/">Book a Free Demo</a>
+    </nav>
+    <p class="site-footer__copy">&copy; <span data-year>2026</span> Ortheon AI. All rights reserved.</p>
+  </div>
 </footer>
 
 </body>

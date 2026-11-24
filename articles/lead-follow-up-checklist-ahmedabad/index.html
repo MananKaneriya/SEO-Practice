@@ -33,8 +33,12 @@
   <meta name="twitter:description" content="A simple checklist for Ahmedabad teams.">
   <meta name="twitter:image" content="https://seo-practice2.vercel.app/images/og/lead-follow-up-checklist-ahmedabad.jpg">
 
-  <!-- STYLESHEET – page design only, not SEO -->
+  <!-- STYLESHEET – page design only, not SEO. Fonts: Inter + Geist Mono (display=swap). Script: clock, menu, FAQ accordion, fade-up -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter:wght@400;500&display=swap">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/site.js" defer></script>
 
   <!-- STRUCTURED DATA – JSON-LD that tells Google this is a blog post (who wrote it, when), the breadcrumb trail and the FAQs -->
   <script type="application/ld+json">
@@ -128,13 +132,21 @@
 </head>
 <body>
 
-<header>
-  <a href="/">Ortheon AI</a>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="/">Ortheon AI</a>
+    <div class="site-header__menu" id="site-menu">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/ai-app-1/">AI App 1</a>
+        <a href="/ai-app-2/">AI App 2</a>
+        <a href="/locations/gujarat/">Areas We Serve</a>
+        <a href="/articles/" aria-current="true">Articles</a>
+      </nav>
+      <span class="clock" aria-hidden="true"><span class="clock__dot"></span><span class="clock__label">AHMEDABAD</span> <span data-clock>--:--:--</span> IST</span>
+    </div>
+    <a class="button button--sm" href="/contact/">Book a Free Demo</a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span></button>
+  </div>
 </header>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -143,117 +155,149 @@
 
 <main>
   <article>
-    <h1>Lead Follow-Up Checklist for Ahmedabad Businesses</h1>
-    <p class="byline">By Ortheon AI · Published <time datetime="2026-11-24">24 November 2026</time> · 5 min read</p>
+    <section class="page-hero">
+      <div class="hero__inner">
+        <h1>Lead Follow-Up Checklist for Ahmedabad Businesses</h1>
+        <p class="byline">By Ortheon AI · Published <time datetime="2026-11-24">24 November 2026</time> · 5 min read</p>
+        <p>Most missed sales are not lost to a competitor. They are lost because nobody followed up. This checklist is written for sales and enquiry teams in Ahmedabad. It covers what to do before, during and after the first reply, gives you a simple timing plan for the next two weeks, and adds a few notes for Bopal and SG Highway.</p>
+      </div>
+      <svg class="hero__target" viewBox="0 0 800 800" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true" focusable="false">
+        <g class="ring-spin"><circle cx="400" cy="400" r="392" stroke-width="10" stroke-dasharray="1 19.53"/></g>
+        <circle cx="400" cy="400" r="364"/>
+        <g class="ring-spin ring-spin--rev"><circle cx="400" cy="400" r="292" stroke-dasharray="2 9"/></g>
+        <circle cx="400" cy="400" r="212"/>
+        <circle cx="400" cy="400" r="124"/>
+        <path d="M0 400H236M564 400H800M400 0V236M400 564V800"/>
+        <path d="M376 400H424M400 376V424"/>
+        <circle cx="400" cy="400" r="5"/>
+      </svg>
+    </section>
 
-    <p>Most missed sales are not lost to a competitor. They are lost because nobody followed up. This checklist is written for sales and enquiry teams in Ahmedabad. It covers what to do before, during and after the first reply, gives you a simple timing plan for the next two weeks, and adds a few notes for Bopal and SG Highway.</p>
+    <section class="section" data-label="Contents">
+      <div class="toc">
+        <p>In this guide</p>
+        <ol>
+          <li><a href="#why-follow-up-is-missed">Why follow-up gets missed</a></li>
+          <li><a href="#the-checklist">The checklist</a></li>
+          <li><a href="#timing-plan">A two-week timing plan</a></li>
+          <li><a href="#local-notes">Notes for Bopal and SG Highway</a></li>
+          <li><a href="#keep-track">Keeping track without a mess</a></li>
+          <li><a href="#when-to-automate">When to move to software</a></li>
+        </ol>
+      </div>
+    </section>
 
-    <div class="toc">
-      <p>In this guide</p>
-      <ol>
-        <li><a href="#why-follow-up-is-missed">Why follow-up gets missed</a></li>
-        <li><a href="#the-checklist">The checklist</a></li>
-        <li><a href="#timing-plan">A two-week timing plan</a></li>
-        <li><a href="#local-notes">Notes for Bopal and SG Highway</a></li>
-        <li><a href="#keep-track">Keeping track without a mess</a></li>
-        <li><a href="#when-to-automate">When to move to software</a></li>
-      </ol>
-    </div>
+    <section class="section" data-label="The problem">
+      <h2 id="why-follow-up-is-missed">Why Follow-Up Gets Missed</h2>
+      <p>Teams in Ahmedabad often receive enquiries from several places at once: WhatsApp, Facebook, Google Ads, website forms, IndiaMART, phone calls and walk-ins. Many of them arrive in the evening or at the weekend, when the office is closed and the person who would normally answer is busy or away.</p>
+      <p>Each enquiry then lives in a different place, such as a phone, a notebook or a spreadsheet, and nobody has the full picture. A follow-up that was promised on Tuesday is forgotten by Thursday. The fix is not working harder. It is having one list, one owner for each lead and one date for the next action.</p>
+    </section>
 
-    <h2 id="why-follow-up-is-missed">Why Follow-Up Gets Missed</h2>
-    <p>Teams in Ahmedabad often receive enquiries from several places at once: WhatsApp, Facebook, Google Ads, website forms, IndiaMART, phone calls and walk-ins. Many of them arrive in the evening or at the weekend, when the office is closed and the person who would normally answer is busy or away.</p>
-    <p>Each enquiry then lives in a different place, such as a phone, a notebook or a spreadsheet, and nobody has the full picture. A follow-up that was promised on Tuesday is forgotten by Thursday. The fix is not working harder. It is having one list, one owner for each lead and one date for the next action.</p>
+    <section class="section" data-label="Checklist">
+      <h2 id="the-checklist">The Checklist</h2>
+      <h3>Before the first reply</h3>
+      <ul class="checklist">
+        <li>Collect every enquiry in one list, whatever channel it came from, with the name, source, date and what the customer asked for.</li>
+        <li>Give each lead one owner, so that nobody assumes someone else will reply.</li>
+        <li>Keep a standard first reply ready in Gujarati, Hindi and English.</li>
+      </ul>
+      <h3>When you reply</h3>
+      <ul class="checklist">
+        <li>Reply within your target time. For new enquiries in business hours, five minutes is a good target.</li>
+        <li>Ask one question that moves things forward, such as the date, the requirement or the budget.</li>
+        <li>Offer a clear next step, such as a visit, a demo or a quotation, with a day and a time.</li>
+      </ul>
+      <h3>After you reply</h3>
+      <ul class="checklist">
+        <li>Write down what was agreed and the date of the next action.</li>
+        <li>Set a reminder for that date so that it does not depend on memory.</li>
+        <li>Send a short recap on WhatsApp so that the customer has it in writing.</li>
+        <li>Mark the final result, won, lost or not now, with a one-line reason. These notes show you what to improve.</li>
+      </ul>
+    </section>
 
-    <h2 id="the-checklist">The Checklist</h2>
+    <section class="section" data-label="Timing plan">
+      <h2 id="timing-plan">A Two-Week Timing Plan</h2>
+      <p>Each follow-up should give the customer a reason to reply, not just ask "are you still interested?". Use this plan as a starting point.</p>
+      <div class="table-wrap">
+        <table class="score">
+          <thead>
+            <tr><th>When</th><th>What to do</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Same day</td><td>First reply, one useful question and a proposed next step</td></tr>
+            <tr><td>Day 1</td><td>Send the details the customer asked for and confirm any visit or call</td></tr>
+            <tr><td>Day 3</td><td>Short WhatsApp check-in with an answer to a likely doubt</td></tr>
+            <tr><td>Day 7</td><td>Phone call to ask whether anything is holding them back</td></tr>
+            <tr><td>Day 14</td><td>Final check-in with a clear question: do they want to go ahead, wait or stop?</td></tr>
+            <tr><td>After that</td><td>Move the lead to a monthly list instead of dropping it</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>To decide who gets the earliest call each morning, sort your list with the method in our guide to <a href="/articles/lead-scoring-hot-warm-cold/">lead scoring with hot, warm and cold labels</a>.</p>
+    </section>
 
-    <h3>Before the first reply</h3>
-    <ul class="checklist">
-      <li>Collect every enquiry in one list, whatever channel it came from, with the name, source, date and what the customer asked for.</li>
-      <li>Give each lead one owner, so that nobody assumes someone else will reply.</li>
-      <li>Keep a standard first reply ready in Gujarati, Hindi and English.</li>
-    </ul>
+    <section class="section" data-label="Local notes">
+      <h2 id="local-notes">Notes for Bopal and SG Highway</h2>
+      <p>The checklist is the same everywhere in the city, but the timing differs between areas. Developers, clinics and schools in Bopal often hear from families in the evening and at the weekend, so a reply that goes out on Sunday evening can matter more than one that goes out on Monday afternoon. See how an <a href="/locations/gujarat/ahmedabad/bopal/">AI chatbot for Bopal businesses</a> handles those messages.</p>
+      <p>Offices, showrooms and developers on SG Highway usually work office hours, so it helps to plan the day around the hot leads first and use the afternoon for warm ones. Read about <a href="/locations/gujarat/ahmedabad/sg-highway/">lead management on SG Highway</a> for ideas that suit a sales office.</p>
+    </section>
 
-    <h3>When you reply</h3>
-    <ul class="checklist">
-      <li>Reply within your target time. For new enquiries in business hours, five minutes is a good target.</li>
-      <li>Ask one question that moves things forward, such as the date, the requirement or the budget.</li>
-      <li>Offer a clear next step, such as a visit, a demo or a quotation, with a day and a time.</li>
-    </ul>
+    <section class="section" data-label="Tracking">
+      <h2 id="keep-track">Keeping Track Without a Mess</h2>
+      <p>A shared spreadsheet is enough for a small team if everyone follows the same columns:</p>
+      <ul class="features">
+        <li>Name and source of the lead</li>
+        <li>What they asked for</li>
+        <li>Score or label: hot, warm or cold</li>
+        <li>Owner</li>
+        <li>Date of last contact</li>
+        <li>Date of next action</li>
+        <li>Status: open, won, lost or not now</li>
+      </ul>
+      <p>Sort the sheet by next-action date every morning. Anything with today's date or an earlier date is your work list for the day.</p>
+    </section>
 
-    <h3>After you reply</h3>
-    <ul class="checklist">
-      <li>Write down what was agreed and the date of the next action.</li>
-      <li>Set a reminder for that date so that it does not depend on memory.</li>
-      <li>Send a short recap on WhatsApp so that the customer has it in writing.</li>
-      <li>Mark the final result, won, lost or not now, with a one-line reason. These notes show you what to improve.</li>
-    </ul>
+    <section class="section" data-label="Software">
+      <h2 id="when-to-automate">When to Move to Software</h2>
+      <p>A spreadsheet starts to break when enquiries arrive from many channels, when more than one person works on the same leads, or when you spend more time updating the sheet than calling customers. At that point, <a href="/ai-app-2/">lead management software</a> can collect the leads, score them and send follow-up reminders for you. You can see how this works for local teams on our page about an <a href="/locations/gujarat/ahmedabad/">AI chatbot and CRM in Ahmedabad</a>.</p>
+    </section>
 
-    <h2 id="timing-plan">A Two-Week Timing Plan</h2>
-    <p>Each follow-up should give the customer a reason to reply, not just ask "are you still interested?". Use this plan as a starting point.</p>
-    <div class="table-wrap">
-      <table class="score">
-        <thead>
-          <tr><th>When</th><th>What to do</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Same day</td><td>First reply, one useful question and a proposed next step</td></tr>
-          <tr><td>Day 1</td><td>Send the details the customer asked for and confirm any visit or call</td></tr>
-          <tr><td>Day 3</td><td>Short WhatsApp check-in with an answer to a likely doubt</td></tr>
-          <tr><td>Day 7</td><td>Phone call to ask whether anything is holding them back</td></tr>
-          <tr><td>Day 14</td><td>Final check-in with a clear question: do they want to go ahead, wait or stop?</td></tr>
-          <tr><td>After that</td><td>Move the lead to a monthly list instead of dropping it</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>To decide who gets the earliest call each morning, sort your list with the method in our guide to <a href="/articles/lead-scoring-hot-warm-cold/">lead scoring with hot, warm and cold labels</a>.</p>
+    <section class="section" data-label="FAQ">
+      <h2>FAQs – Lead Follow-Up in Ahmedabad</h2>
+      <dl class="faq">
+        <dt>How many times should I follow up a lead?</dt>
+        <dd>Most teams do best with four or five touches over two weeks, each with a different reason to get in touch, such as sending details, confirming a visit or answering a doubt. After that, move the lead to a monthly list instead of dropping it.</dd>
+        <dt>Should I follow up on WhatsApp or by phone?</dt>
+        <dd>Use both. A short WhatsApp message is easy to answer when the customer is busy, and a call works better for hot leads and for questions that are hard to write down. Follow the channel the customer used to contact you first.</dd>
+        <dt>When should a small team move from a spreadsheet to a CRM?</dt>
+        <dd>Move when leads arrive from several channels, when more than one person works on the same leads, or when follow-ups are being missed because the sheet is not updated on time.</dd>
+      </dl>
+    </section>
 
-    <h2 id="local-notes">Notes for Bopal and SG Highway</h2>
-    <p>The checklist is the same everywhere in the city, but the timing differs between areas. Developers, clinics and schools in Bopal often hear from families in the evening and at the weekend, so a reply that goes out on Sunday evening can matter more than one that goes out on Monday afternoon. See how an <a href="/locations/gujarat/ahmedabad/bopal/">AI chatbot for Bopal businesses</a> handles those messages.</p>
-    <p>Offices, showrooms and developers on SG Highway usually work office hours, so it helps to plan the day around the hot leads first and use the afternoon for warm ones. Read about <a href="/locations/gujarat/ahmedabad/sg-highway/">lead management on SG Highway</a> for ideas that suit a sales office.</p>
-
-    <h2 id="keep-track">Keeping Track Without a Mess</h2>
-    <p>A shared spreadsheet is enough for a small team if everyone follows the same columns:</p>
-    <ul class="features">
-      <li>Name and source of the lead</li>
-      <li>What they asked for</li>
-      <li>Score or label: hot, warm or cold</li>
-      <li>Owner</li>
-      <li>Date of last contact</li>
-      <li>Date of next action</li>
-      <li>Status: open, won, lost or not now</li>
-    </ul>
-    <p>Sort the sheet by next-action date every morning. Anything with today's date or an earlier date is your work list for the day.</p>
-
-    <h2 id="when-to-automate">When to Move to Software</h2>
-    <p>A spreadsheet starts to break when enquiries arrive from many channels, when more than one person works on the same leads, or when you spend more time updating the sheet than calling customers. At that point, <a href="/ai-app-2/">lead management software</a> can collect the leads, score them and send follow-up reminders for you. You can see how this works for local teams on our page about an <a href="/locations/gujarat/ahmedabad/">AI chatbot and CRM in Ahmedabad</a>.</p>
-
-    <h2>FAQs – Lead Follow-Up in Ahmedabad</h2>
-    <dl class="faq">
-      <dt>How many times should I follow up a lead?</dt>
-      <dd>Most teams do best with four or five touches over two weeks, each with a different reason to get in touch, such as sending details, confirming a visit or answering a doubt. After that, move the lead to a monthly list instead of dropping it.</dd>
-      <dt>Should I follow up on WhatsApp or by phone?</dt>
-      <dd>Use both. A short WhatsApp message is easy to answer when the customer is busy, and a call works better for hot leads and for questions that are hard to write down. Follow the channel the customer used to contact you first.</dd>
-      <dt>When should a small team move from a spreadsheet to a CRM?</dt>
-      <dd>Move when leads arrive from several channels, when more than one person works on the same leads, or when follow-ups are being missed because the sheet is not updated on time.</dd>
-    </dl>
-
-    <h2>Related Articles</h2>
-    <ul>
-      <li><a href="/articles/reply-to-whatsapp-enquiries-faster/">How to reply to WhatsApp enquiries faster</a></li>
-      <li><a href="/articles/lead-scoring-hot-warm-cold/">Lead scoring explained: how to sort hot, warm and cold leads</a></li>
-    </ul>
-
-    <p><a class="button" href="/contact/">Book a free demo</a></p>
-    <p><a href="/articles/">← All articles</a></p>
+    <section class="section" data-label="Related reading">
+      <h2>Related Articles</h2>
+      <ul class="link-list">
+        <li><a href="/articles/reply-to-whatsapp-enquiries-faster/">How to reply to WhatsApp enquiries faster</a></li>
+        <li><a href="/articles/lead-scoring-hot-warm-cold/">Lead scoring explained: how to sort hot, warm and cold leads</a></li>
+      </ul>
+      <p><a class="button" href="/contact/">Book a free demo</a></p>
+      <p><a class="link-arrow link-arrow--back" href="/articles/">← All articles</a></p>
+    </section>
   </article>
 </main>
 
-<footer>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/ai-app-1/">AI App 1</a>
+      <a href="/ai-app-2/">AI App 2</a>
+      <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
+      <a href="/articles/">Articles</a>
+      <a href="/contact/">Book a Free Demo</a>
+    </nav>
+    <p class="site-footer__copy">&copy; <span data-year>2026</span> Ortheon AI. All rights reserved.</p>
+  </div>
 </footer>
 
 </body>

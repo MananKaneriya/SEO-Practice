@@ -29,8 +29,12 @@
   <meta name="twitter:description" content="Capture leads from every channel, score them and never miss a follow-up with AI App 2.">
   <meta name="twitter:image" content="https://seo-practice.vercel.app/images/og/ai-app-2-sales-lead-management.jpg">
 
-  <!-- STYLESHEET – page design only, not SEO -->
+  <!-- STYLESHEET – page design only, not SEO. Fonts: Inter + Geist Mono (display=swap). Script: clock, menu, FAQ accordion, fade-up -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter:wght@400;500&display=swap">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/site.js" defer></script>
 
   <!-- STRUCTURED DATA – JSON-LD that tells Google the software product, the breadcrumb trail and the FAQs -->
   <script type="application/ld+json">
@@ -112,13 +116,21 @@
 </head>
 <body>
 
-<header>
-  <a href="/">Ortheon AI</a>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="/">Ortheon AI</a>
+    <div class="site-header__menu" id="site-menu">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/ai-app-1/">AI App 1</a>
+        <a href="/ai-app-2/" aria-current="page">AI App 2</a>
+        <a href="/locations/gujarat/">Areas We Serve</a>
+        <a href="/articles/">Articles</a>
+      </nav>
+      <span class="clock" aria-hidden="true"><span class="clock__dot"></span><span class="clock__label">AHMEDABAD</span> <span data-clock>--:--:--</span> IST</span>
+    </div>
+    <a class="button button--sm" href="/contact/">Book a Free Demo</a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span></button>
+  </div>
 </header>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -126,68 +138,103 @@
 </nav>
 
 <main>
-  <h1>AI App 2 – AI Sales &amp; Lead Management App</h1>
-  <p>AI App 2 is an AI sales tool from Ortheon AI that captures leads from every channel, scores them and reminds your sales team who to follow up with and when. It means more leads converted, no forgotten follow-ups and a clear sales pipeline.</p>
-  <p><a class="button" href="/contact/">Book a free demo</a></p>
+  <section class="page-hero">
+    <div class="hero__inner">
+      <h1>AI App 2 – AI Sales &amp; Lead Management App</h1>
+      <p>AI App 2 is an AI sales tool from Ortheon AI that captures leads from every channel, scores them and reminds your sales team who to follow up with and when. It means more leads converted, no forgotten follow-ups and a clear sales pipeline.</p>
+      <p><a class="button" href="/contact/">Book a free demo</a></p>
+    </div>
+    <svg class="hero__target" viewBox="0 0 800 800" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true" focusable="false">
+      <g class="ring-spin"><circle cx="400" cy="400" r="392" stroke-width="10" stroke-dasharray="1 19.53"/></g>
+      <circle cx="400" cy="400" r="364"/>
+      <g class="ring-spin ring-spin--rev"><circle cx="400" cy="400" r="292" stroke-dasharray="2 9"/></g>
+      <circle cx="400" cy="400" r="212"/>
+      <circle cx="400" cy="400" r="124"/>
+      <path d="M0 400H236M564 400H800M400 0V236M400 564V800"/>
+      <path d="M376 400H424M400 376V424"/>
+      <circle cx="400" cy="400" r="5"/>
+    </svg>
+  </section>
 
-  <h2>What Is AI App 2?</h2>
-  <p>Most sales teams do not lose leads because customers are not interested. They lose them because an enquiry arrived on WhatsApp, another came from a Facebook form, and nobody remembered to call back. AI App 2 puts every lead in one place, scores it hot, warm or cold, and tells your team what to do next. Owners and managers get a daily report instead of having to ask each salesperson for an update.</p>
+  <section class="section" data-label="Overview">
+    <h2>What Is AI App 2?</h2>
+    <p>Most sales teams do not lose leads because customers are not interested. They lose them because an enquiry arrived on WhatsApp, another came from a Facebook form, and nobody remembered to call back. AI App 2 puts every lead in one place, scores it hot, warm or cold, and tells your team what to do next. Owners and managers get a daily report instead of having to ask each salesperson for an update.</p>
+  </section>
 
-  <h2>Key Features</h2>
-  <ul class="features">
-    <li>Collects leads from website forms, WhatsApp, IndiaMART, Facebook and Google Ads in one place</li>
-    <li>AI lead scoring (hot, warm or cold)</li>
-    <li>Automatic follow-up reminders and WhatsApp and email templates</li>
-    <li>Writes quotation and proposal drafts from a short note</li>
-    <li>Daily sales report for owners and managers</li>
-  </ul>
+  <section class="section" data-label="Features">
+    <h2>Key Features</h2>
+    <ul class="features">
+      <li>Collects leads from website forms, WhatsApp, IndiaMART, Facebook and Google Ads in one place</li>
+      <li>AI lead scoring (hot, warm or cold)</li>
+      <li>Automatic follow-up reminders and WhatsApp and email templates</li>
+      <li>Writes quotation and proposal drafts from a short note</li>
+      <li>Daily sales report for owners and managers</li>
+    </ul>
+  </section>
 
-  <h2>Who AI App 2 Is For</h2>
-  <p>AI App 2 is for sales teams that handle many enquiries at once and need a simple way to keep track of them.</p>
-  <ul class="features">
-    <li><strong>Real estate teams:</strong> keep every buyer enquiry and site-visit follow-up in one list.</li>
-    <li><strong>Manufacturing and B2B trading:</strong> track long quotation cycles so that no buyer is forgotten.</li>
-    <li><strong>Education:</strong> follow up on admission enquiries on time.</li>
-    <li><strong>Automobile dealers and agencies:</strong> see which leads are hot today and who should call them.</li>
-  </ul>
+  <section class="section" data-label="Who it is for">
+    <h2>Who AI App 2 Is For</h2>
+    <p>AI App 2 is for sales teams that handle many enquiries at once and need a simple way to keep track of them.</p>
+    <ul class="features">
+      <li><strong>Real estate teams:</strong> keep every buyer enquiry and site-visit follow-up in one list.</li>
+      <li><strong>Manufacturing and B2B trading:</strong> track long quotation cycles so that no buyer is forgotten.</li>
+      <li><strong>Education:</strong> follow up on admission enquiries on time.</li>
+      <li><strong>Automobile dealers and agencies:</strong> see which leads are hot today and who should call them.</li>
+    </ul>
+  </section>
 
-  <h2>How Setup Works</h2>
-  <ol class="steps">
-    <li><strong>Book a free demo.</strong> We learn how your team sells today and show AI App 2 working with the kind of leads you receive.</li>
-    <li><strong>Connect your lead sources.</strong> We link your website forms, WhatsApp, IndiaMART, Facebook and Google Ads so that leads arrive in one place.</li>
-    <li><strong>Set up your follow-up rules.</strong> We prepare your WhatsApp and email templates and decide how reminders should work for your team.</li>
-    <li><strong>Train your team and go live.</strong> We train your salespeople online, with on-site onboarding available in major cities, and keep supporting you after launch.</li>
-  </ol>
+  <section class="section" data-label="Setup">
+    <h2>How Setup Works</h2>
+    <ol class="steps">
+      <li><strong>Book a free demo.</strong> We learn how your team sells today and show AI App 2 working with the kind of leads you receive.</li>
+      <li><strong>Connect your lead sources.</strong> We link your website forms, WhatsApp, IndiaMART, Facebook and Google Ads so that leads arrive in one place.</li>
+      <li><strong>Set up your follow-up rules.</strong> We prepare your WhatsApp and email templates and decide how reminders should work for your team.</li>
+      <li><strong>Train your team and go live.</strong> We train your salespeople online, with on-site onboarding available in major cities, and keep supporting you after launch.</li>
+    </ol>
+  </section>
 
-  <h2>FAQs – AI App 2</h2>
-  <dl class="faq">
-    <dt>Which channels can AI App 2 collect leads from?</dt>
-    <dd>AI App 2 collects leads from website forms, WhatsApp, IndiaMART, Facebook and Google Ads and puts them in one place, so your team no longer has to copy enquiries between apps and spreadsheets.</dd>
-    <dt>What do hot, warm and cold leads mean?</dt>
-    <dd>AI App 2 scores every lead as hot, warm or cold so that your team can start with the people most likely to buy and spend less time on enquiries that are not ready yet.</dd>
-    <dt>Can AI App 2 help me write quotations?</dt>
-    <dd>Yes. You write a short note about what the customer needs, and AI App 2 writes a quotation or proposal draft that you can check, edit and send.</dd>
-    <dt>Who receives the daily sales report?</dt>
-    <dd>Owners and managers receive a daily sales report, so they can see what happened in the pipeline and which follow-ups are still pending without chasing the team.</dd>
-  </dl>
+  <section class="section" data-label="FAQ">
+    <h2>FAQs – AI App 2</h2>
+    <dl class="faq">
+      <dt>Which channels can AI App 2 collect leads from?</dt>
+      <dd>AI App 2 collects leads from website forms, WhatsApp, IndiaMART, Facebook and Google Ads and puts them in one place, so your team no longer has to copy enquiries between apps and spreadsheets.</dd>
+      <dt>What do hot, warm and cold leads mean?</dt>
+      <dd>AI App 2 scores every lead as hot, warm or cold so that your team can start with the people most likely to buy and spend less time on enquiries that are not ready yet.</dd>
+      <dt>Can AI App 2 help me write quotations?</dt>
+      <dd>Yes. You write a short note about what the customer needs, and AI App 2 writes a quotation or proposal draft that you can check, edit and send.</dd>
+      <dt>Who receives the daily sales report?</dt>
+      <dd>Owners and managers receive a daily sales report, so they can see what happened in the pipeline and which follow-ups are still pending without chasing the team.</dd>
+    </dl>
+  </section>
 
-  <h2>Related Guides</h2>
-  <p>New to sorting leads? See how <a href="/articles/lead-scoring-hot-warm-cold/">hot, warm and cold lead scoring</a> works, or use our <a href="/articles/lead-follow-up-checklist-ahmedabad/">lead follow-up checklist</a> to build a routine your team can keep.</p>
+  <section class="section" data-label="Related reading">
+    <h2>Related Guides</h2>
+    <p>New to sorting leads? See how <a href="/articles/lead-scoring-hot-warm-cold/">hot, warm and cold lead scoring</a> works, or use our <a href="/articles/lead-follow-up-checklist-ahmedabad/">lead follow-up checklist</a> to build a routine your team can keep.</p>
+  </section>
 
-  <h2>Available Across Gujarat</h2>
-  <p>AI App 2 is cloud software, so sales teams in any district of Gujarat can use it, with online setup, training and support. See how it works for businesses in <a href="/locations/gujarat/ahmedabad/">Ahmedabad</a>, <a href="/locations/gujarat/surat/">Surat</a>, <a href="/locations/gujarat/vadodara/">Vadodara</a> and <a href="/locations/gujarat/rajkot/">Rajkot</a>, or browse all the <a href="/locations/gujarat/">areas we serve across Gujarat</a>.</p>
+  <section class="section" data-label="Coverage">
+    <h2>Available Across Gujarat</h2>
+    <p>AI App 2 is cloud software, so sales teams in any district of Gujarat can use it, with online setup, training and support. See how it works for businesses in <a href="/locations/gujarat/ahmedabad/">Ahmedabad</a>, <a href="/locations/gujarat/surat/">Surat</a>, <a href="/locations/gujarat/vadodara/">Vadodara</a> and <a href="/locations/gujarat/rajkot/">Rajkot</a>, or browse all the <a href="/locations/gujarat/">areas we serve across Gujarat</a>.</p>
+  </section>
 
-  <h2>Book a Free Demo</h2>
-  <p>See AI App 2 sort a sample of your own leads and plan the next follow-ups. If you also want to answer customer questions automatically, look at <a href="/ai-app-1/">AI App 1</a>, which works well alongside it.</p>
-  <p><a class="button" href="/contact/">Book a free demo</a></p>
+  <section class="section" data-label="Free demo">
+    <h2>Book a Free Demo</h2>
+    <p>See AI App 2 sort a sample of your own leads and plan the next follow-ups. If you also want to answer customer questions automatically, look at <a href="/ai-app-1/">AI App 1</a>, which works well alongside it.</p>
+    <p><a class="button" href="/contact/">Book a free demo</a></p>
+  </section>
 </main>
 
-<footer>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/ai-app-1/">AI App 1</a>
+      <a href="/ai-app-2/">AI App 2</a>
+      <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
+      <a href="/articles/">Articles</a>
+      <a href="/contact/">Book a Free Demo</a>
+    </nav>
+    <p class="site-footer__copy">&copy; <span data-year>2026</span> Ortheon AI. All rights reserved.</p>
+  </div>
 </footer>
 
 </body>

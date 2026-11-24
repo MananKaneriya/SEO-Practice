@@ -392,8 +392,8 @@ def main():
         kb = img_path.stat().st_size / 1024 if img_path.is_file() else 0
         img_real = info is not None and info[:2] == (1200, 630) and info[2] == 3
         tw_same = p.meta.get("twitter:image") == og_img
-        # every absolute URL in the file must use the live domain (schema.org is the JSON-LD vocabulary)
-        host_ok = all(urlparse(u).netloc in (HOST, "schema.org") for u in re.findall(r"https?://[^\s\"'<>]+", raw))
+        # every absolute URL in the file must use the live domain (schema.org is the JSON-LD vocabulary; Google Fonts serves the fonts)
+        host_ok = all(urlparse(u).netloc in (HOST, "schema.org", "fonts.googleapis.com", "fonts.gstatic.com") for u in re.findall(r"https?://[^\s\"'<>]+", raw))
         words = len(p.main_words)
         in_map = url in in_sitemap
         has_kw = bool(p.meta.get("keywords", "").strip())

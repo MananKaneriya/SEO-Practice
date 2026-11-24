@@ -29,8 +29,12 @@
   <meta name="twitter:description" content="AI chatbot and lead management apps for Surat businesses. Book a free demo.">
   <meta name="twitter:image" content="https://seo-practice.vercel.app/images/og/ai-apps-surat.jpg">
 
-  <!-- STYLESHEET – page design only, not SEO -->
+  <!-- STYLESHEET – page design only, not SEO. Fonts: Inter + Geist Mono (display=swap). Script: clock, menu, FAQ accordion, fade-up -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter:wght@400;500&display=swap">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/site.js" defer></script>
 
   <!-- STRUCTURED DATA – JSON-LD that tells Google the service you offer in this city, the breadcrumb trail and the FAQs -->
   <script type="application/ld+json">
@@ -120,13 +124,21 @@
 </head>
 <body>
 
-<header>
-  <a href="/">Ortheon AI</a>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="/">Ortheon AI</a>
+    <div class="site-header__menu" id="site-menu">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/ai-app-1/">AI App 1</a>
+        <a href="/ai-app-2/">AI App 2</a>
+        <a href="/locations/gujarat/" aria-current="true">Areas We Serve</a>
+        <a href="/articles/">Articles</a>
+      </nav>
+      <span class="clock" aria-hidden="true"><span class="clock__dot"></span><span class="clock__label">AHMEDABAD</span> <span data-clock>--:--:--</span> IST</span>
+    </div>
+    <a class="button button--sm" href="/contact/">Book a Free Demo</a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span></button>
+  </div>
 </header>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -134,89 +146,121 @@
 </nav>
 
 <main>
-  <h1>AI App 1 &amp; AI App 2 for Businesses in Surat</h1>
-  <p>Surat runs on trade. Textile markets, diamond units, embroidery workshops, real estate developers and many retailers all depend on quick replies and quick follow-ups, often over WhatsApp. Ortheon AI brings two cloud apps to Surat businesses: an assistant that answers customers around the clock and a sales app that makes sure no enquiry is forgotten. Setup and training are online, with on-site onboarding available in the city.</p>
-  <p><a class="button" href="/contact/">Book a free demo</a></p>
+  <section class="page-hero">
+    <div class="hero__inner">
+      <h1>AI App 1 &amp; AI App 2 for Businesses in Surat</h1>
+      <p>Surat runs on trade. Textile markets, diamond units, embroidery workshops, real estate developers and many retailers all depend on quick replies and quick follow-ups, often over WhatsApp. Ortheon AI brings two cloud apps to Surat businesses: an assistant that answers customers around the clock and a sales app that makes sure no enquiry is forgotten. Setup and training are online, with on-site onboarding available in the city.</p>
+      <p><a class="button" href="/contact/">Book a free demo</a></p>
+    </div>
+    <svg class="hero__target" viewBox="0 0 800 800" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true" focusable="false">
+      <g class="ring-spin"><circle cx="400" cy="400" r="392" stroke-width="10" stroke-dasharray="1 19.53"/></g>
+      <circle cx="400" cy="400" r="364"/>
+      <g class="ring-spin ring-spin--rev"><circle cx="400" cy="400" r="292" stroke-dasharray="2 9"/></g>
+      <circle cx="400" cy="400" r="212"/>
+      <circle cx="400" cy="400" r="124"/>
+      <path d="M0 400H236M564 400H800M400 0V236M400 564V800"/>
+      <path d="M376 400H424M400 376V424"/>
+      <circle cx="400" cy="400" r="5"/>
+    </svg>
+  </section>
 
-  <h2>AI App 1 in Surat – Customer Support for Local Businesses</h2>
-  <p>A textile trader in Surat can receive a steady stream of WhatsApp messages asking about fabric designs, rates and stock, and a shop in Adajan or Pal gets the same questions about timings and availability again and again. AI App 1 replies instantly on WhatsApp, website chat and Instagram, in English, Hindi and Gujarati, using the product list, price list and brochures you give it.</p>
-  <p>Diamond units and trading offices can use it to handle routine buyer enquiries, so that experienced staff spend their time on serious buyers. Coaching classes and clinics in areas such as Vesu and Piplod can use it to book appointments and send reminders. When a customer needs a real person, the chat goes to your staff, and the dashboard shows which questions come up most and which leads were missed.</p>
+  <section class="section" data-label="AI App 1">
+    <h2>AI App 1 in Surat – Customer Support for Local Businesses</h2>
+    <p>A textile trader in Surat can receive a steady stream of WhatsApp messages asking about fabric designs, rates and stock, and a shop in Adajan or Pal gets the same questions about timings and availability again and again. AI App 1 replies instantly on WhatsApp, website chat and Instagram, in English, Hindi and Gujarati, using the product list, price list and brochures you give it.</p>
+    <p>Diamond units and trading offices can use it to handle routine buyer enquiries, so that experienced staff spend their time on serious buyers. Coaching classes and clinics in areas such as Vesu and Piplod can use it to book appointments and send reminders. When a customer needs a real person, the chat goes to your staff, and the dashboard shows which questions come up most and which leads were missed.</p>
+  </section>
 
-  <h2>AI App 2 in Surat – Sales and Lead Management</h2>
-  <p>Surat's textile and diamond traders often win business through repeated follow-up: a buyer asks for a rate today and decides next week. AI App 2 collects leads from website forms, WhatsApp, IndiaMART, Facebook and Google Ads in one place, scores them hot, warm or cold, and reminds your team who to follow up with and when.</p>
-  <p>Real estate teams selling in Vesu, Pal and Adajan can see which buyers have asked for a site visit, and agencies can track client enquiries in a single list. The app writes quotation and proposal drafts from a short note, which helps traders who send many quotations, and the daily sales report tells owners and managers what happened without a round of phone calls.</p>
+  <section class="section" data-label="AI App 2">
+    <h2>AI App 2 in Surat – Sales and Lead Management</h2>
+    <p>Surat's textile and diamond traders often win business through repeated follow-up: a buyer asks for a rate today and decides next week. AI App 2 collects leads from website forms, WhatsApp, IndiaMART, Facebook and Google Ads in one place, scores them hot, warm or cold, and reminds your team who to follow up with and when.</p>
+    <p>Real estate teams selling in Vesu, Pal and Adajan can see which buyers have asked for a site visit, and agencies can track client enquiries in a single list. The app writes quotation and proposal drafts from a short note, which helps traders who send many quotations, and the daily sales report tells owners and managers what happened without a round of phone calls.</p>
+  </section>
 
-  <h2>Areas We Serve in Surat</h2>
-  <p>Both apps are cloud software, so we support businesses across all of Surat – from busy trading areas such as Varachha and Katargam to industrial areas such as Sachin, Pandesara and Hazira. Vesu has its own page, and the list below shows the other areas we serve.</p>
-  <ul class="areas">
-    <li>Adajan</li>
-    <li>Pal</li>
-    <li>Rander</li>
-    <li>Jahangirpura</li>
-    <li><a href="/locations/gujarat/surat/vesu/">Vesu</a></li>
-    <li>Piplod</li>
-    <li>City Light</li>
-    <li>Athwa</li>
-    <li>Ghod Dod Road</li>
-    <li>Althan</li>
-    <li>Bhatar</li>
-    <li>Dumas</li>
-    <li>Udhna</li>
-    <li>Pandesara</li>
-    <li>Sachin</li>
-    <li>Dindoli</li>
-    <li>Limbayat</li>
-    <li>Varachha</li>
-    <li>Mota Varachha</li>
-    <li>Katargam</li>
-    <li>Amroli</li>
-    <li>Utran</li>
-    <li>Sarthana</li>
-    <li>Puna</li>
-    <li>Hazira</li>
-  </ul>
-  <p class="towns">Also serving nearby towns: Bardoli, Kamrej, Kadodara, Olpad, Palsana</p>
+  <section class="section" data-label="Areas we serve">
+    <h2>Areas We Serve in Surat</h2>
+    <p>Both apps are cloud software, so we support businesses across all of Surat – from busy trading areas such as Varachha and Katargam to industrial areas such as Sachin, Pandesara and Hazira. Vesu has its own page, and the list below shows the other areas we serve.</p>
+    <ul class="areas">
+      <li>Adajan</li>
+      <li>Pal</li>
+      <li>Rander</li>
+      <li>Jahangirpura</li>
+      <li><a href="/locations/gujarat/surat/vesu/">Vesu</a></li>
+      <li>Piplod</li>
+      <li>City Light</li>
+      <li>Athwa</li>
+      <li>Ghod Dod Road</li>
+      <li>Althan</li>
+      <li>Bhatar</li>
+      <li>Dumas</li>
+      <li>Udhna</li>
+      <li>Pandesara</li>
+      <li>Sachin</li>
+      <li>Dindoli</li>
+      <li>Limbayat</li>
+      <li>Varachha</li>
+      <li>Mota Varachha</li>
+      <li>Katargam</li>
+      <li>Amroli</li>
+      <li>Utran</li>
+      <li>Sarthana</li>
+      <li>Puna</li>
+      <li>Hazira</li>
+    </ul>
+    <p class="towns">Also serving nearby towns: Bardoli, Kamrej, Kadodara, Olpad, Palsana</p>
+  </section>
 
-  <h2>Setup and Training in Surat</h2>
-  <p>Getting started in Surat is straightforward. After a free demo, we set the apps up online, connect your WhatsApp number or lead sources, and train your team by video call – handy for busy traders who cannot spare a day away from the market or workshop. If you would like someone on site, on-site onboarding is available in Surat, and you can reach us online whenever your team needs help.</p>
-  <p><a class="button" href="/contact/">Book a free demo</a></p>
+  <section class="section" data-label="Setup &amp; support">
+    <h2>Setup and Training in Surat</h2>
+    <p>Getting started in Surat is straightforward. After a free demo, we set the apps up online, connect your WhatsApp number or lead sources, and train your team by video call – handy for busy traders who cannot spare a day away from the market or workshop. If you would like someone on site, on-site onboarding is available in Surat, and you can reach us online whenever your team needs help.</p>
+    <p><a class="button" href="/contact/">Book a free demo</a></p>
+  </section>
 
-  <h2>Why Surat Businesses Choose Ortheon AI</h2>
-  <ul class="features">
-    <li>Customers get answers in Gujarati, Hindi or English, even late at night when the shop or office is closed.</li>
-    <li>Your own rate list, product list and brochures teach AI App 1, so replies reflect how you actually do business.</li>
-    <li>AI App 2 keeps every enquiry in one pipeline, so a buyer who asks for a rate today is still followed up next week.</li>
-    <li>Online setup and training save travel time, and on-site onboarding is there if you need it.</li>
-  </ul>
+  <section class="section" data-label="Why Ortheon AI">
+    <h2>Why Surat Businesses Choose Ortheon AI</h2>
+    <ul class="features">
+      <li>Customers get answers in Gujarati, Hindi or English, even late at night when the shop or office is closed.</li>
+      <li>Your own rate list, product list and brochures teach AI App 1, so replies reflect how you actually do business.</li>
+      <li>AI App 2 keeps every enquiry in one pipeline, so a buyer who asks for a rate today is still followed up next week.</li>
+      <li>Online setup and training save travel time, and on-site onboarding is there if you need it.</li>
+    </ul>
+  </section>
 
-  <h2>Nearby Cities We Serve</h2>
-  <ul>
-    <li><a href="/locations/gujarat/vadodara/">Vadodara</a></li>
-    <li>Bharuch</li>
-    <li>Navsari</li>
-  </ul>
+  <section class="section" data-label="Areas we serve">
+    <h2>Nearby Cities We Serve</h2>
+    <ul class="tags">
+      <li><a href="/locations/gujarat/vadodara/">Vadodara</a></li>
+      <li>Bharuch</li>
+      <li>Navsari</li>
+    </ul>
+  </section>
 
-  <h2>FAQs – AI Apps in Surat</h2>
-  <dl class="faq">
-    <dt>Can a textile trader in Surat use AI App 1 on WhatsApp?</dt>
-    <dd>Yes. AI App 1 replies on WhatsApp, website chat and Instagram, and it learns from your product list, price list and brochures, so it can answer common questions about designs, rates and availability in English, Hindi or Gujarati.</dd>
-    <dt>Does Ortheon AI offer on-site onboarding in Surat?</dt>
-    <dd>Yes. Online setup and training are available for every business, and on-site onboarding is available in Surat for teams that prefer it.</dd>
-    <dt>Can AI App 2 help my sales team follow up with buyers who asked for a rate?</dt>
-    <dd>Yes. AI App 2 scores each lead as hot, warm or cold and sends reminders about who to follow up with and when, with WhatsApp and email templates ready to use.</dd>
-    <dt>Do you support businesses in Sachin, Hazira and nearby towns such as Bardoli?</dt>
-    <dd>Yes. Because the apps are cloud software, businesses in Sachin, Hazira, Bardoli, Kamrej and other places around Surat can use them with online setup and support.</dd>
-  </dl>
-
-  <p><a href="/locations/gujarat/">← See all cities and areas we serve in Gujarat</a></p>
+  <section class="section" data-label="FAQ">
+    <h2>FAQs – AI Apps in Surat</h2>
+    <dl class="faq">
+      <dt>Can a textile trader in Surat use AI App 1 on WhatsApp?</dt>
+      <dd>Yes. AI App 1 replies on WhatsApp, website chat and Instagram, and it learns from your product list, price list and brochures, so it can answer common questions about designs, rates and availability in English, Hindi or Gujarati.</dd>
+      <dt>Does Ortheon AI offer on-site onboarding in Surat?</dt>
+      <dd>Yes. Online setup and training are available for every business, and on-site onboarding is available in Surat for teams that prefer it.</dd>
+      <dt>Can AI App 2 help my sales team follow up with buyers who asked for a rate?</dt>
+      <dd>Yes. AI App 2 scores each lead as hot, warm or cold and sends reminders about who to follow up with and when, with WhatsApp and email templates ready to use.</dd>
+      <dt>Do you support businesses in Sachin, Hazira and nearby towns such as Bardoli?</dt>
+      <dd>Yes. Because the apps are cloud software, businesses in Sachin, Hazira, Bardoli, Kamrej and other places around Surat can use them with online setup and support.</dd>
+    </dl>
+    <p><a class="link-arrow link-arrow--back" href="/locations/gujarat/">← See all cities and areas we serve in Gujarat</a></p>
+  </section>
 </main>
 
-<footer>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/ai-app-1/">AI App 1</a>
+      <a href="/ai-app-2/">AI App 2</a>
+      <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
+      <a href="/articles/">Articles</a>
+      <a href="/contact/">Book a Free Demo</a>
+    </nav>
+    <p class="site-footer__copy">&copy; <span data-year>2026</span> Ortheon AI. All rights reserved.</p>
+  </div>
 </footer>
 
 </body>

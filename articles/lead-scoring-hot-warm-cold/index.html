@@ -33,8 +33,12 @@
   <meta name="twitter:description" content="Sort leads and call the right one first.">
   <meta name="twitter:image" content="https://seo-practice2.vercel.app/images/og/lead-scoring-hot-warm-cold.jpg">
 
-  <!-- STYLESHEET – page design only, not SEO -->
+  <!-- STYLESHEET – page design only, not SEO. Fonts: Inter + Geist Mono (display=swap). Script: clock, menu, FAQ accordion, fade-up -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter:wght@400;500&display=swap">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/site.js" defer></script>
 
   <!-- STRUCTURED DATA – JSON-LD that tells Google this is a blog post (who wrote it, when), the breadcrumb trail and the FAQs -->
   <script type="application/ld+json">
@@ -128,13 +132,21 @@
 </head>
 <body>
 
-<header>
-  <a href="/">Ortheon AI</a>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="/">Ortheon AI</a>
+    <div class="site-header__menu" id="site-menu">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/ai-app-1/">AI App 1</a>
+        <a href="/ai-app-2/">AI App 2</a>
+        <a href="/locations/gujarat/">Areas We Serve</a>
+        <a href="/articles/" aria-current="true">Articles</a>
+      </nav>
+      <span class="clock" aria-hidden="true"><span class="clock__dot"></span><span class="clock__label">AHMEDABAD</span> <span data-clock>--:--:--</span> IST</span>
+    </div>
+    <a class="button button--sm" href="/contact/">Book a Free Demo</a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span></button>
+  </div>
 </header>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -143,109 +155,144 @@
 
 <main>
   <article>
-    <h1>Lead Scoring Explained: How to Sort Hot, Warm and Cold Leads</h1>
-    <p class="byline">By Ortheon AI · Published <time datetime="2026-11-24">24 November 2026</time> · 5 min read</p>
+    <section class="page-hero">
+      <div class="hero__inner">
+        <h1>Lead Scoring Explained: How to Sort Hot, Warm and Cold Leads</h1>
+        <p class="byline">By Ortheon AI · Published <time datetime="2026-11-24">24 November 2026</time> · 5 min read</p>
+        <p>Lead scoring is a simple way to decide which enquiry deserves your next phone call. Instead of replying in the order that messages arrived, you give each lead a score based on how likely they are to buy soon, and you start with the highest. This guide explains hot, warm and cold leads, gives you a scoring sheet you can copy, and shows how to use the scores every day.</p>
+      </div>
+      <svg class="hero__target" viewBox="0 0 800 800" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true" focusable="false">
+        <g class="ring-spin"><circle cx="400" cy="400" r="392" stroke-width="10" stroke-dasharray="1 19.53"/></g>
+        <circle cx="400" cy="400" r="364"/>
+        <g class="ring-spin ring-spin--rev"><circle cx="400" cy="400" r="292" stroke-dasharray="2 9"/></g>
+        <circle cx="400" cy="400" r="212"/>
+        <circle cx="400" cy="400" r="124"/>
+        <path d="M0 400H236M564 400H800M400 0V236M400 564V800"/>
+        <path d="M376 400H424M400 376V424"/>
+        <circle cx="400" cy="400" r="5"/>
+      </svg>
+    </section>
 
-    <p>Lead scoring is a simple way to decide which enquiry deserves your next phone call. Instead of replying in the order that messages arrived, you give each lead a score based on how likely they are to buy soon, and you start with the highest. This guide explains hot, warm and cold leads, gives you a scoring sheet you can copy, and shows how to use the scores every day.</p>
+    <section class="section" data-label="Contents">
+      <div class="toc">
+        <p>In this guide</p>
+        <ol>
+          <li><a href="#what-is-lead-scoring">What lead scoring means</a></li>
+          <li><a href="#hot-warm-cold">Hot, warm and cold leads</a></li>
+          <li><a href="#scoring-sheet">A scoring sheet you can copy</a></li>
+          <li><a href="#daily-routine">How to use the scores every day</a></li>
+          <li><a href="#common-mistakes">Common mistakes</a></li>
+          <li><a href="#software-scoring">When software can do the scoring</a></li>
+        </ol>
+      </div>
+    </section>
 
-    <div class="toc">
-      <p>In this guide</p>
-      <ol>
-        <li><a href="#what-is-lead-scoring">What lead scoring means</a></li>
-        <li><a href="#hot-warm-cold">Hot, warm and cold leads</a></li>
-        <li><a href="#scoring-sheet">A scoring sheet you can copy</a></li>
-        <li><a href="#daily-routine">How to use the scores every day</a></li>
-        <li><a href="#common-mistakes">Common mistakes</a></li>
-        <li><a href="#software-scoring">When software can do the scoring</a></li>
+    <section class="section" data-label="The basics">
+      <h2 id="what-is-lead-scoring">What Lead Scoring Means</h2>
+      <p>Every sales team has more enquiries than time. A buyer who says "I want to see the flat this Saturday" and a person who sends one message asking for a brochure are both leads, but they are not equal today. Lead scoring gives you a quick, fair way to tell them apart so that the buyer who is ready does not wait behind the person who is only browsing.</p>
+      <p>A score is just a number you add up from what you know about the lead. Most teams then group the numbers into three labels, hot, warm and cold, because three labels are easy for everyone to remember and use.</p>
+    </section>
+
+    <section class="section" data-label="Lead labels">
+      <h2 id="hot-warm-cold">Hot, Warm and Cold Leads</h2>
+      <div class="table-wrap">
+        <table class="score">
+          <thead>
+            <tr><th>Label</th><th>What it usually looks like</th><th>What to do</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Hot</td><td>Asked for a quotation, demo or site visit, and gave a clear time frame</td><td>Call the same day, ideally within the hour</td></tr>
+            <tr><td>Warm</td><td>Interested and asking questions, but has not set a date or a next step</td><td>Follow up within two or three days with useful information</td></tr>
+            <tr><td>Cold</td><td>Only browsing, vague about the need, or silent after earlier follow-ups</td><td>Keep on a monthly list and try again later with a new reason to talk</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" data-label="Scoring sheet">
+      <h2 id="scoring-sheet">A Scoring Sheet You Can Copy</h2>
+      <p>Here is a simple sheet that a small team can start with. The points are an example. Change them to match what your own best customers did before they bought.</p>
+      <div class="table-wrap">
+        <table class="score">
+          <thead>
+            <tr><th>Signal</th><th>Points</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Asked for a quotation, demo or site visit</td><td>+30</td></tr>
+            <tr><td>Said they plan to buy within 30 days</td><td>+25</td></tr>
+            <tr><td>Explained their requirement or budget clearly</td><td>+15</td></tr>
+            <tr><td>Replied to your last follow-up</td><td>+15</td></tr>
+            <tr><td>Came from a referral or is a repeat customer</td><td>+10</td></tr>
+            <tr><td>Only asked a general question</td><td>+5</td></tr>
+            <tr><td>No reply to your last two follow-ups</td><td>−20</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Then group the total: <strong>60 or more is hot</strong>, <strong>30 to 59 is warm</strong>, and <strong>below 30 is cold</strong>. Write the score and the label next to each lead, and change them whenever something new happens.</p>
+    </section>
+
+    <section class="section" data-label="Daily routine">
+      <h2 id="daily-routine">How to Use the Scores Every Day</h2>
+      <ol class="steps">
+        <li><strong>Start with the hot list.</strong> Call every hot lead before you look at anything else.</li>
+        <li><strong>Move to the warm list.</strong> Send each warm lead something useful, such as an answer to their question, a brochure or a suggested time to talk.</li>
+        <li><strong>Give every lead a next-action date.</strong> A lead without a date is a lead that will be forgotten.</li>
+        <li><strong>Update the score.</strong> If a lead replies, books a visit or goes silent, change the points straight away.</li>
+        <li><strong>Review the cold list once a month.</strong> Cold does not mean dead. Many cold leads become warm when the timing changes.</li>
       </ol>
-    </div>
+    </section>
 
-    <h2 id="what-is-lead-scoring">What Lead Scoring Means</h2>
-    <p>Every sales team has more enquiries than time. A buyer who says "I want to see the flat this Saturday" and a person who sends one message asking for a brochure are both leads, but they are not equal today. Lead scoring gives you a quick, fair way to tell them apart so that the buyer who is ready does not wait behind the person who is only browsing.</p>
-    <p>A score is just a number you add up from what you know about the lead. Most teams then group the numbers into three labels, hot, warm and cold, because three labels are easy for everyone to remember and use.</p>
+    <section class="section" data-label="Mistakes to avoid">
+      <h2 id="common-mistakes">Common Mistakes</h2>
+      <ul class="features">
+        <li><strong>Too many signals.</strong> If the sheet has twenty rows, nobody will fill it in. Five to seven signals are enough.</li>
+        <li><strong>Never updating scores.</strong> A score from last month is a guess. Update it when the lead's situation changes.</li>
+        <li><strong>Ignoring cold leads completely.</strong> Keep a light monthly routine so that they are not lost.</li>
+        <li><strong>Never checking the result.</strong> Every quarter, look at the leads that became customers and ask whether your scoring would have marked them hot.</li>
+      </ul>
+    </section>
 
-    <h2 id="hot-warm-cold">Hot, Warm and Cold Leads</h2>
-    <div class="table-wrap">
-      <table class="score">
-        <thead>
-          <tr><th>Label</th><th>What it usually looks like</th><th>What to do</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Hot</td><td>Asked for a quotation, demo or site visit, and gave a clear time frame</td><td>Call the same day, ideally within the hour</td></tr>
-          <tr><td>Warm</td><td>Interested and asking questions, but has not set a date or a next step</td><td>Follow up within two or three days with useful information</td></tr>
-          <tr><td>Cold</td><td>Only browsing, vague about the need, or silent after earlier follow-ups</td><td>Keep on a monthly list and try again later with a new reason to talk</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <section class="section" data-label="Software">
+      <h2 id="software-scoring">When Software Can Do the Scoring</h2>
+      <p>A spreadsheet works while leads arrive from one or two places. It gets harder when enquiries come from website forms, WhatsApp, IndiaMART, Facebook and Google Ads at once, and someone has to copy each one into the sheet. Our <a href="/ai-app-2/">AI lead management app</a> collects those leads in one place, scores each one hot, warm or cold, and reminds your team who to follow up with and when.</p>
+      <p>If many of your leads begin as WhatsApp chats, a fast first reply helps just as much as a good score, so read our guide on how to <a href="/articles/reply-to-whatsapp-enquiries-faster/">reply to WhatsApp enquiries faster</a> as well.</p>
+    </section>
 
-    <h2 id="scoring-sheet">A Scoring Sheet You Can Copy</h2>
-    <p>Here is a simple sheet that a small team can start with. The points are an example. Change them to match what your own best customers did before they bought.</p>
-    <div class="table-wrap">
-      <table class="score">
-        <thead>
-          <tr><th>Signal</th><th>Points</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Asked for a quotation, demo or site visit</td><td>+30</td></tr>
-          <tr><td>Said they plan to buy within 30 days</td><td>+25</td></tr>
-          <tr><td>Explained their requirement or budget clearly</td><td>+15</td></tr>
-          <tr><td>Replied to your last follow-up</td><td>+15</td></tr>
-          <tr><td>Came from a referral or is a repeat customer</td><td>+10</td></tr>
-          <tr><td>Only asked a general question</td><td>+5</td></tr>
-          <tr><td>No reply to your last two follow-ups</td><td>−20</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>Then group the total: <strong>60 or more is hot</strong>, <strong>30 to 59 is warm</strong>, and <strong>below 30 is cold</strong>. Write the score and the label next to each lead, and change them whenever something new happens.</p>
+    <section class="section" data-label="FAQ">
+      <h2>FAQs – Lead Scoring</h2>
+      <dl class="faq">
+        <dt>What is the difference between a hot lead and a warm lead?</dt>
+        <dd>A hot lead has shown clear buying signals, such as asking for a quotation or a site visit and giving a date. A warm lead is interested and asking questions but has not committed to a next step or a date.</dd>
+        <dt>How many of my leads should be hot?</dt>
+        <dd>There is no fixed number. If most of your leads are hot, your scoring is too generous and the label no longer helps your team choose. If none are hot for weeks, check that your scoring reflects what your real buyers did before they bought.</dd>
+        <dt>Can I do lead scoring in a spreadsheet?</dt>
+        <dd>Yes. A spreadsheet with one row per lead, a score column and a next-action date works well for a small team. Software becomes useful when leads arrive from many channels and nobody has time to update the sheet by hand.</dd>
+      </dl>
+    </section>
 
-    <h2 id="daily-routine">How to Use the Scores Every Day</h2>
-    <ol class="steps">
-      <li><strong>Start with the hot list.</strong> Call every hot lead before you look at anything else.</li>
-      <li><strong>Move to the warm list.</strong> Send each warm lead something useful, such as an answer to their question, a brochure or a suggested time to talk.</li>
-      <li><strong>Give every lead a next-action date.</strong> A lead without a date is a lead that will be forgotten.</li>
-      <li><strong>Update the score.</strong> If a lead replies, books a visit or goes silent, change the points straight away.</li>
-      <li><strong>Review the cold list once a month.</strong> Cold does not mean dead. Many cold leads become warm when the timing changes.</li>
-    </ol>
-
-    <h2 id="common-mistakes">Common Mistakes</h2>
-    <ul class="features">
-      <li><strong>Too many signals.</strong> If the sheet has twenty rows, nobody will fill it in. Five to seven signals are enough.</li>
-      <li><strong>Never updating scores.</strong> A score from last month is a guess. Update it when the lead's situation changes.</li>
-      <li><strong>Ignoring cold leads completely.</strong> Keep a light monthly routine so that they are not lost.</li>
-      <li><strong>Never checking the result.</strong> Every quarter, look at the leads that became customers and ask whether your scoring would have marked them hot.</li>
-    </ul>
-
-    <h2 id="software-scoring">When Software Can Do the Scoring</h2>
-    <p>A spreadsheet works while leads arrive from one or two places. It gets harder when enquiries come from website forms, WhatsApp, IndiaMART, Facebook and Google Ads at once, and someone has to copy each one into the sheet. Our <a href="/ai-app-2/">AI lead management app</a> collects those leads in one place, scores each one hot, warm or cold, and reminds your team who to follow up with and when.</p>
-    <p>If many of your leads begin as WhatsApp chats, a fast first reply helps just as much as a good score, so read our guide on how to <a href="/articles/reply-to-whatsapp-enquiries-faster/">reply to WhatsApp enquiries faster</a> as well.</p>
-
-    <h2>FAQs – Lead Scoring</h2>
-    <dl class="faq">
-      <dt>What is the difference between a hot lead and a warm lead?</dt>
-      <dd>A hot lead has shown clear buying signals, such as asking for a quotation or a site visit and giving a date. A warm lead is interested and asking questions but has not committed to a next step or a date.</dd>
-      <dt>How many of my leads should be hot?</dt>
-      <dd>There is no fixed number. If most of your leads are hot, your scoring is too generous and the label no longer helps your team choose. If none are hot for weeks, check that your scoring reflects what your real buyers did before they bought.</dd>
-      <dt>Can I do lead scoring in a spreadsheet?</dt>
-      <dd>Yes. A spreadsheet with one row per lead, a score column and a next-action date works well for a small team. Software becomes useful when leads arrive from many channels and nobody has time to update the sheet by hand.</dd>
-    </dl>
-
-    <h2>Related Articles</h2>
-    <ul>
-      <li><a href="/articles/reply-to-whatsapp-enquiries-faster/">How to reply to WhatsApp enquiries faster</a></li>
-      <li><a href="/articles/lead-follow-up-checklist-ahmedabad/">Lead follow-up checklist for Ahmedabad businesses</a></li>
-    </ul>
-
-    <p><a class="button" href="/contact/">Book a free demo</a></p>
-    <p><a href="/articles/">← All articles</a></p>
+    <section class="section" data-label="Related reading">
+      <h2>Related Articles</h2>
+      <ul class="link-list">
+        <li><a href="/articles/reply-to-whatsapp-enquiries-faster/">How to reply to WhatsApp enquiries faster</a></li>
+        <li><a href="/articles/lead-follow-up-checklist-ahmedabad/">Lead follow-up checklist for Ahmedabad businesses</a></li>
+      </ul>
+      <p><a class="button" href="/contact/">Book a free demo</a></p>
+      <p><a class="link-arrow link-arrow--back" href="/articles/">← All articles</a></p>
+    </section>
   </article>
 </main>
 
-<footer>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/ai-app-1/">AI App 1</a>
+      <a href="/ai-app-2/">AI App 2</a>
+      <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
+      <a href="/articles/">Articles</a>
+      <a href="/contact/">Book a Free Demo</a>
+    </nav>
+    <p class="site-footer__copy">&copy; <span data-year>2026</span> Ortheon AI. All rights reserved.</p>
+  </div>
 </footer>
 
 </body>

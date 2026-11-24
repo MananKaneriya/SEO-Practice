@@ -29,8 +29,12 @@
   <meta name="twitter:description" content="AI chatbot and lead management apps for Rajkot businesses. Book a free demo.">
   <meta name="twitter:image" content="https://seo-practice.vercel.app/images/og/ai-apps-rajkot.jpg">
 
-  <!-- STYLESHEET – page design only, not SEO -->
+  <!-- STYLESHEET – page design only, not SEO. Fonts: Inter + Geist Mono (display=swap). Script: clock, menu, FAQ accordion, fade-up -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter:wght@400;500&display=swap">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/site.js" defer></script>
 
   <!-- STRUCTURED DATA – JSON-LD that tells Google the service you offer in this city, the breadcrumb trail and the FAQs -->
   <script type="application/ld+json">
@@ -120,13 +124,21 @@
 </head>
 <body>
 
-<header>
-  <a href="/">Ortheon AI</a>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="/">Ortheon AI</a>
+    <div class="site-header__menu" id="site-menu">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/ai-app-1/">AI App 1</a>
+        <a href="/ai-app-2/">AI App 2</a>
+        <a href="/locations/gujarat/" aria-current="true">Areas We Serve</a>
+        <a href="/articles/">Articles</a>
+      </nav>
+      <span class="clock" aria-hidden="true"><span class="clock__dot"></span><span class="clock__label">AHMEDABAD</span> <span data-clock>--:--:--</span> IST</span>
+    </div>
+    <a class="button button--sm" href="/contact/">Book a Free Demo</a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span></button>
+  </div>
 </header>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -134,78 +146,110 @@
 </nav>
 
 <main>
-  <h1>AI App 1 &amp; AI App 2 for Businesses in Rajkot</h1>
-  <p>Rajkot is known for its engineering workshops and auto-parts makers, many of them in industrial areas such as Aji GIDC and Metoda GIDC. Alongside them are traders, clinics, coaching classes and showrooms on roads such as Kalawad Road and 150 Feet Ring Road. Ortheon AI helps Rajkot businesses reply to enquiries quickly and follow up every lead, with online setup and on-site onboarding available in the city.</p>
-  <p><a class="button" href="/contact/">Book a free demo</a></p>
+  <section class="page-hero">
+    <div class="hero__inner">
+      <h1>AI App 1 &amp; AI App 2 for Businesses in Rajkot</h1>
+      <p>Rajkot is known for its engineering workshops and auto-parts makers, many of them in industrial areas such as Aji GIDC and Metoda GIDC. Alongside them are traders, clinics, coaching classes and showrooms on roads such as Kalawad Road and 150 Feet Ring Road. Ortheon AI helps Rajkot businesses reply to enquiries quickly and follow up every lead, with online setup and on-site onboarding available in the city.</p>
+      <p><a class="button" href="/contact/">Book a free demo</a></p>
+    </div>
+    <svg class="hero__target" viewBox="0 0 800 800" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true" focusable="false">
+      <g class="ring-spin"><circle cx="400" cy="400" r="392" stroke-width="10" stroke-dasharray="1 19.53"/></g>
+      <circle cx="400" cy="400" r="364"/>
+      <g class="ring-spin ring-spin--rev"><circle cx="400" cy="400" r="292" stroke-dasharray="2 9"/></g>
+      <circle cx="400" cy="400" r="212"/>
+      <circle cx="400" cy="400" r="124"/>
+      <path d="M0 400H236M564 400H800M400 0V236M400 564V800"/>
+      <path d="M376 400H424M400 376V424"/>
+      <circle cx="400" cy="400" r="5"/>
+    </svg>
+  </section>
 
-  <h2>AI App 1 in Rajkot – Customer Support for Local Businesses</h2>
-  <p>An engineering workshop or auto-parts maker in Rajkot gets many repeat questions from buyers: which parts do you make, in what sizes and materials, can you share a catalogue. AI App 1 answers them instantly on WhatsApp, website chat and Instagram, in English, Hindi and Gujarati, using the product list and brochures you give it, so your team is not interrupted every few minutes.</p>
-  <p>Showrooms and shops can use it to answer questions about products, prices and availability, and clinics and coaching classes can use it to book appointments and send reminders. Conversations that need a person are handed to your staff, and the dashboard shows the most-asked questions and any missed leads.</p>
+  <section class="section" data-label="AI App 1">
+    <h2>AI App 1 in Rajkot – Customer Support for Local Businesses</h2>
+    <p>An engineering workshop or auto-parts maker in Rajkot gets many repeat questions from buyers: which parts do you make, in what sizes and materials, can you share a catalogue. AI App 1 answers them instantly on WhatsApp, website chat and Instagram, in English, Hindi and Gujarati, using the product list and brochures you give it, so your team is not interrupted every few minutes.</p>
+    <p>Showrooms and shops can use it to answer questions about products, prices and availability, and clinics and coaching classes can use it to book appointments and send reminders. Conversations that need a person are handed to your staff, and the dashboard shows the most-asked questions and any missed leads.</p>
+  </section>
 
-  <h2>AI App 2 in Rajkot – Sales and Lead Management</h2>
-  <p>Rajkot's engineering and auto-parts companies depend on repeat orders and careful quotations. AI App 2 collects enquiries from IndiaMART, WhatsApp, website forms, Facebook and Google Ads in one place, scores them hot, warm or cold, and reminds your team when to follow up. B2B traders can keep each buyer's history in one list instead of scattered across many phone chats.</p>
-  <p>It drafts quotations and proposals from a short note, which helps when your team sends many technical quotations. Agencies and automobile sales teams can see which leads are ready for a call, and owners get a daily sales report that shows what moved in the pipeline.</p>
+  <section class="section" data-label="AI App 2">
+    <h2>AI App 2 in Rajkot – Sales and Lead Management</h2>
+    <p>Rajkot's engineering and auto-parts companies depend on repeat orders and careful quotations. AI App 2 collects enquiries from IndiaMART, WhatsApp, website forms, Facebook and Google Ads in one place, scores them hot, warm or cold, and reminds your team when to follow up. B2B traders can keep each buyer's history in one list instead of scattered across many phone chats.</p>
+    <p>It drafts quotations and proposals from a short note, which helps when your team sends many technical quotations. Agencies and automobile sales teams can see which leads are ready for a call, and owners get a daily sales report that shows what moved in the pipeline.</p>
+  </section>
 
-  <h2>Areas We Serve in Rajkot</h2>
-  <p>We support businesses across Rajkot, including the industrial estates at Aji GIDC and Metoda GIDC and commercial roads such as Kalawad Road, University Road and Gondal Road. Browse the list below to find your part of Rajkot.</p>
-  <ul class="areas">
-    <li>Kalawad Road</li>
-    <li>150 Feet Ring Road</li>
-    <li>University Road</li>
-    <li>Raiya Road</li>
-    <li>Yagnik Road</li>
-    <li>Amin Marg</li>
-    <li>Nana Mava</li>
-    <li>Mavdi</li>
-    <li>Kothariya</li>
-    <li>Gondal Road</li>
-    <li>Jamnagar Road</li>
-    <li>Morbi Road</li>
-    <li>Aji GIDC</li>
-    <li>Metoda GIDC</li>
-  </ul>
-  <p class="towns">Also serving nearby towns: Gondal, Jetpur, Dhoraji, Upleta, Shapar-Veraval</p>
+  <section class="section" data-label="Areas we serve">
+    <h2>Areas We Serve in Rajkot</h2>
+    <p>We support businesses across Rajkot, including the industrial estates at Aji GIDC and Metoda GIDC and commercial roads such as Kalawad Road, University Road and Gondal Road. Browse the list below to find your part of Rajkot.</p>
+    <ul class="areas">
+      <li>Kalawad Road</li>
+      <li>150 Feet Ring Road</li>
+      <li>University Road</li>
+      <li>Raiya Road</li>
+      <li>Yagnik Road</li>
+      <li>Amin Marg</li>
+      <li>Nana Mava</li>
+      <li>Mavdi</li>
+      <li>Kothariya</li>
+      <li>Gondal Road</li>
+      <li>Jamnagar Road</li>
+      <li>Morbi Road</li>
+      <li>Aji GIDC</li>
+      <li>Metoda GIDC</li>
+    </ul>
+    <p class="towns">Also serving nearby towns: Gondal, Jetpur, Dhoraji, Upleta, Shapar-Veraval</p>
+  </section>
 
-  <h2>Setup and Training in Rajkot</h2>
-  <p>For Rajkot businesses, setup begins with a free demo built around your own products and enquiries. We then connect your channels and lead sources online, configure the apps and train your staff over video call, so production or showroom time is not lost. On-site onboarding is available in Rajkot for teams that want it, and support continues online afterwards.</p>
-  <p><a class="button" href="/contact/">Book a free demo</a></p>
+  <section class="section" data-label="Setup &amp; support">
+    <h2>Setup and Training in Rajkot</h2>
+    <p>For Rajkot businesses, setup begins with a free demo built around your own products and enquiries. We then connect your channels and lead sources online, configure the apps and train your staff over video call, so production or showroom time is not lost. On-site onboarding is available in Rajkot for teams that want it, and support continues online afterwards.</p>
+    <p><a class="button" href="/contact/">Book a free demo</a></p>
+  </section>
 
-  <h2>Why Rajkot Businesses Choose Ortheon AI</h2>
-  <ul class="features">
-    <li>Buyers can send enquiries in Gujarati, Hindi or English and get a quick first reply.</li>
-    <li>Your catalogue, product list and price list stay in your control and are used to answer questions.</li>
-    <li>Quotation drafts from a short note save time for teams that quote often.</li>
-    <li>Online setup and training mean no lost production days, with on-site onboarding available in Rajkot.</li>
-  </ul>
+  <section class="section" data-label="Why Ortheon AI">
+    <h2>Why Rajkot Businesses Choose Ortheon AI</h2>
+    <ul class="features">
+      <li>Buyers can send enquiries in Gujarati, Hindi or English and get a quick first reply.</li>
+      <li>Your catalogue, product list and price list stay in your control and are used to answer questions.</li>
+      <li>Quotation drafts from a short note save time for teams that quote often.</li>
+      <li>Online setup and training mean no lost production days, with on-site onboarding available in Rajkot.</li>
+    </ul>
+  </section>
 
-  <h2>Nearby Cities We Serve</h2>
-  <ul>
-    <li>Morbi</li>
-    <li>Jamnagar</li>
-    <li>Junagadh</li>
-  </ul>
+  <section class="section" data-label="Areas we serve">
+    <h2>Nearby Cities We Serve</h2>
+    <ul class="tags">
+      <li>Morbi</li>
+      <li>Jamnagar</li>
+      <li>Junagadh</li>
+    </ul>
+  </section>
 
-  <h2>FAQs – AI Apps in Rajkot</h2>
-  <dl class="faq">
-    <dt>Can an engineering or auto-parts company in Rajkot use AI App 1?</dt>
-    <dd>Yes. AI App 1 learns from your product list, price list, FAQs and brochures, answers repeat buyer questions on WhatsApp, website chat and Instagram, and passes serious enquiries to your staff.</dd>
-    <dt>Can AI App 2 collect my IndiaMART enquiries in Rajkot?</dt>
-    <dd>Yes. AI App 2 collects leads from IndiaMART, WhatsApp, website forms, Facebook and Google Ads in one place and scores them hot, warm or cold.</dd>
-    <dt>Is on-site onboarding available in Rajkot?</dt>
-    <dd>Yes. Setup and training are online by default, and on-site onboarding is available in Rajkot.</dd>
-    <dt>Do you also support businesses in Gondal, Jetpur and nearby towns?</dt>
-    <dd>Yes. Because the apps are cloud software, businesses in Gondal, Jetpur, Dhoraji, Upleta and Shapar-Veraval can use them with online setup and support.</dd>
-  </dl>
-
-  <p><a href="/locations/gujarat/">← See all cities and areas we serve in Gujarat</a></p>
+  <section class="section" data-label="FAQ">
+    <h2>FAQs – AI Apps in Rajkot</h2>
+    <dl class="faq">
+      <dt>Can an engineering or auto-parts company in Rajkot use AI App 1?</dt>
+      <dd>Yes. AI App 1 learns from your product list, price list, FAQs and brochures, answers repeat buyer questions on WhatsApp, website chat and Instagram, and passes serious enquiries to your staff.</dd>
+      <dt>Can AI App 2 collect my IndiaMART enquiries in Rajkot?</dt>
+      <dd>Yes. AI App 2 collects leads from IndiaMART, WhatsApp, website forms, Facebook and Google Ads in one place and scores them hot, warm or cold.</dd>
+      <dt>Is on-site onboarding available in Rajkot?</dt>
+      <dd>Yes. Setup and training are online by default, and on-site onboarding is available in Rajkot.</dd>
+      <dt>Do you also support businesses in Gondal, Jetpur and nearby towns?</dt>
+      <dd>Yes. Because the apps are cloud software, businesses in Gondal, Jetpur, Dhoraji, Upleta and Shapar-Veraval can use them with online setup and support.</dd>
+    </dl>
+    <p><a class="link-arrow link-arrow--back" href="/locations/gujarat/">← See all cities and areas we serve in Gujarat</a></p>
+  </section>
 </main>
 
-<footer>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/ai-app-1/">AI App 1</a>
+      <a href="/ai-app-2/">AI App 2</a>
+      <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
+      <a href="/articles/">Articles</a>
+      <a href="/contact/">Book a Free Demo</a>
+    </nav>
+    <p class="site-footer__copy">&copy; <span data-year>2026</span> Ortheon AI. All rights reserved.</p>
+  </div>
 </footer>
 
 </body>

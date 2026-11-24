@@ -29,8 +29,12 @@
   <meta name="twitter:description" content="Book a free demo of Ortheon AI and see how it works for your business.">
   <meta name="twitter:image" content="https://seo-practice.vercel.app/images/og/ortheon-ai-free-demo.jpg">
 
-  <!-- STYLESHEET – page design only, not SEO -->
+  <!-- STYLESHEET – page design only, not SEO. Fonts: Inter + Geist Mono (display=swap). Script: clock, menu, FAQ accordion, fade-up -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter:wght@400;500&display=swap">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/site.js" defer></script>
 
   <!-- STRUCTURED DATA – JSON-LD that tells Google the breadcrumb trail -->
   <script type="application/ld+json">
@@ -56,13 +60,21 @@
 </head>
 <body>
 
-<header>
-  <a href="/">Ortheon AI</a>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="/">Ortheon AI</a>
+    <div class="site-header__menu" id="site-menu">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/ai-app-1/">AI App 1</a>
+        <a href="/ai-app-2/">AI App 2</a>
+        <a href="/locations/gujarat/">Areas We Serve</a>
+        <a href="/articles/">Articles</a>
+      </nav>
+      <span class="clock" aria-hidden="true"><span class="clock__dot"></span><span class="clock__label">AHMEDABAD</span> <span data-clock>--:--:--</span> IST</span>
+    </div>
+    <a class="button button--sm" href="/contact/">Book a Free Demo</a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span></button>
+  </div>
 </header>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -70,79 +82,102 @@
 </nav>
 
 <main>
-  <h1>Book a Free Demo of Ortheon AI</h1>
-  <p>Tell us about your business and we will arrange a free demo of <a href="/ai-app-1/">AI App 1</a>, <a href="/ai-app-2/">AI App 2</a> or both. You will see the apps working on the kind of customer questions and sales leads your business really gets.</p>
+  <section class="page-hero">
+    <div class="hero__inner">
+      <h1>Book a Free Demo of Ortheon AI</h1>
+      <p>Tell us about your business and we will arrange a free demo of <a href="/ai-app-1/">AI App 1</a>, <a href="/ai-app-2/">AI App 2</a> or both. You will see the apps working on the kind of customer questions and sales leads your business really gets.</p>
+    </div>
+    <svg class="hero__target" viewBox="0 0 800 800" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true" focusable="false">
+      <g class="ring-spin"><circle cx="400" cy="400" r="392" stroke-width="10" stroke-dasharray="1 19.53"/></g>
+      <circle cx="400" cy="400" r="364"/>
+      <g class="ring-spin ring-spin--rev"><circle cx="400" cy="400" r="292" stroke-dasharray="2 9"/></g>
+      <circle cx="400" cy="400" r="212"/>
+      <circle cx="400" cy="400" r="124"/>
+      <path d="M0 400H236M564 400H800M400 0V236M400 564V800"/>
+      <path d="M376 400H424M400 376V424"/>
+      <circle cx="400" cy="400" r="5"/>
+    </svg>
+  </section>
 
-  <h2>Tell Us About Your Business</h2>
-  <form class="demo-form" action="/contact/" method="get">
-    <p>
-      <label for="name">Your name</label>
-      <input type="text" id="name" name="name" autocomplete="name" required>
-    </p>
-    <p>
-      <label for="business">Business name</label>
-      <input type="text" id="business" name="business" autocomplete="organization" required>
-    </p>
-    <p>
-      <label for="contact">Email or WhatsApp number</label>
-      <input type="text" id="contact" name="contact" required>
-    </p>
-    <p>
-      <label for="city">City</label>
-      <select id="city" name="city" required>
-        <option value="">Choose your city</option>
-        <option>Ahmedabad</option>
-        <option>Surat</option>
-        <option>Vadodara</option>
-        <option>Rajkot</option>
-        <option>Gandhinagar</option>
-        <option>Bhavnagar</option>
-        <option>Jamnagar</option>
-        <option>Junagadh</option>
-        <option>Morbi</option>
-        <option>Anand</option>
-        <option>Nadiad</option>
-        <option>Bharuch</option>
-        <option>Navsari</option>
-        <option>Vapi</option>
-        <option>Mehsana</option>
-        <option>Bhuj</option>
-        <option>Other city in Gujarat</option>
-      </select>
-    </p>
-    <p>
-      <label for="app">App you are interested in</label>
-      <select id="app" name="app" required>
-        <option value="">Choose an app</option>
-        <option>AI App 1 – AI customer support assistant</option>
-        <option>AI App 2 – AI sales and lead management app</option>
-        <option>Both apps</option>
-      </select>
-    </p>
-    <p>
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5"></textarea>
-    </p>
-    <p><button class="button" type="submit">Book a free demo</button></p>
-  </form>
-  <p class="form-note">This form is a layout example on a practice site. It does not send your message anywhere yet.</p>
+  <section class="section" data-label="Your details">
+    <h2>Tell Us About Your Business</h2>
+    <form class="demo-form" action="/contact/" method="get">
+      <p>
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+      </p>
+      <p>
+        <label for="business">Business name</label>
+        <input type="text" id="business" name="business" autocomplete="organization" required>
+      </p>
+      <p>
+        <label for="contact">Email or WhatsApp number</label>
+        <input type="text" id="contact" name="contact" required>
+      </p>
+      <p>
+        <label for="city">City</label>
+        <select id="city" name="city" required>
+          <option value="">Choose your city</option>
+          <option>Ahmedabad</option>
+          <option>Surat</option>
+          <option>Vadodara</option>
+          <option>Rajkot</option>
+          <option>Gandhinagar</option>
+          <option>Bhavnagar</option>
+          <option>Jamnagar</option>
+          <option>Junagadh</option>
+          <option>Morbi</option>
+          <option>Anand</option>
+          <option>Nadiad</option>
+          <option>Bharuch</option>
+          <option>Navsari</option>
+          <option>Vapi</option>
+          <option>Mehsana</option>
+          <option>Bhuj</option>
+          <option>Other city in Gujarat</option>
+        </select>
+      </p>
+      <p>
+        <label for="app">App you are interested in</label>
+        <select id="app" name="app" required>
+          <option value="">Choose an app</option>
+          <option>AI App 1 – AI customer support assistant</option>
+          <option>AI App 2 – AI sales and lead management app</option>
+          <option>Both apps</option>
+        </select>
+      </p>
+      <p>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+      </p>
+      <p><button class="button" type="submit">Book a free demo</button></p>
+    </form>
+    <p class="form-note">This form is a layout example on a practice site. It does not send your message anywhere yet.</p>
+  </section>
 
-  <h2>What Happens After You Book</h2>
-  <ol class="steps">
-    <li>We read your message and note your business type, your city and the app you are interested in.</li>
-    <li>We get in touch to agree a time for the demo, which can be held online from anywhere in Gujarat.</li>
-    <li>In the demo we show the app with examples from your own business, and answer your questions.</li>
-    <li>If you decide to go ahead, we set up the app online, train your staff and keep supporting you.</li>
-  </ol>
-  <p>Not sure which app to ask about? <a href="/ai-app-1/">AI App 1</a> answers customer questions on WhatsApp, website chat and Instagram, and <a href="/ai-app-2/">AI App 2</a> helps your sales team manage leads and follow-ups. You can use either on its own or both together. You can also see <a href="/locations/gujarat/">where we work across Gujarat</a>.</p>
+  <section class="section" data-label="Next steps">
+    <h2>What Happens After You Book</h2>
+    <ol class="steps">
+      <li>We read your message and note your business type, your city and the app you are interested in.</li>
+      <li>We get in touch to agree a time for the demo, which can be held online from anywhere in Gujarat.</li>
+      <li>In the demo we show the app with examples from your own business, and answer your questions.</li>
+      <li>If you decide to go ahead, we set up the app online, train your staff and keep supporting you.</li>
+    </ol>
+    <p>Not sure which app to ask about? <a href="/ai-app-1/">AI App 1</a> answers customer questions on WhatsApp, website chat and Instagram, and <a href="/ai-app-2/">AI App 2</a> helps your sales team manage leads and follow-ups. You can use either on its own or both together. You can also see <a href="/locations/gujarat/">where we work across Gujarat</a>.</p>
+  </section>
 </main>
 
-<footer>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/ai-app-1/">AI App 1</a>
+      <a href="/ai-app-2/">AI App 2</a>
+      <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
+      <a href="/articles/">Articles</a>
+      <a href="/contact/">Book a Free Demo</a>
+    </nav>
+    <p class="site-footer__copy">&copy; <span data-year>2026</span> Ortheon AI. All rights reserved.</p>
+  </div>
 </footer>
 
 </body>

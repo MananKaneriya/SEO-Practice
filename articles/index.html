@@ -31,8 +31,12 @@
   <meta name="twitter:description" content="Practical guides for Gujarat businesses.">
   <meta name="twitter:image" content="https://seo-practice2.vercel.app/images/og/ai-chatbot-crm-articles.jpg">
 
-  <!-- STYLESHEET – page design only, not SEO -->
+  <!-- STYLESHEET – page design only, not SEO. Fonts: Inter + Geist Mono (display=swap). Script: clock, menu, FAQ accordion, fade-up -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter:wght@400;500&display=swap">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/site.js" defer></script>
 
   <!-- STRUCTURED DATA – JSON-LD that tells Google this page is a list of articles (it must match the list you can see on the page) and gives the breadcrumb trail -->
   <script type="application/ld+json">
@@ -95,13 +99,21 @@
 </head>
 <body>
 
-<header>
-  <a href="/">Ortheon AI</a>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="logo" href="/">Ortheon AI</a>
+    <div class="site-header__menu" id="site-menu">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/ai-app-1/">AI App 1</a>
+        <a href="/ai-app-2/">AI App 2</a>
+        <a href="/locations/gujarat/">Areas We Serve</a>
+        <a href="/articles/" aria-current="page">Articles</a>
+      </nav>
+      <span class="clock" aria-hidden="true"><span class="clock__dot"></span><span class="clock__label">AHMEDABAD</span> <span data-clock>--:--:--</span> IST</span>
+    </div>
+    <a class="button button--sm" href="/contact/">Book a Free Demo</a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><span></span></button>
+  </div>
 </header>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -109,46 +121,71 @@
 </nav>
 
 <main>
-  <h1>AI Chatbot &amp; CRM Articles and Guides for Gujarat Businesses</h1>
-  <p>These guides are written for shop owners, clinic managers, developers and sales teams in Gujarat who want to answer customers faster and follow up every lead. Each one is practical and short, with checklists and tables you can use the same day, whether or not you ever use our software.</p>
-  <p><a class="button" href="/contact/">Book a free demo</a></p>
+  <section class="page-hero">
+    <div class="hero__inner">
+      <h1>AI Chatbot &amp; CRM Articles and Guides for Gujarat Businesses</h1>
+      <p>These guides are written for shop owners, clinic managers, developers and sales teams in Gujarat who want to answer customers faster and follow up every lead. Each one is practical and short, with checklists and tables you can use the same day, whether or not you ever use our software.</p>
+      <p><a class="button" href="/contact/">Book a free demo</a></p>
+    </div>
+    <svg class="hero__target" viewBox="0 0 800 800" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true" focusable="false">
+      <g class="ring-spin"><circle cx="400" cy="400" r="392" stroke-width="10" stroke-dasharray="1 19.53"/></g>
+      <circle cx="400" cy="400" r="364"/>
+      <g class="ring-spin ring-spin--rev"><circle cx="400" cy="400" r="292" stroke-dasharray="2 9"/></g>
+      <circle cx="400" cy="400" r="212"/>
+      <circle cx="400" cy="400" r="124"/>
+      <path d="M0 400H236M564 400H800M400 0V236M400 564V800"/>
+      <path d="M376 400H424M400 376V424"/>
+      <circle cx="400" cy="400" r="5"/>
+    </svg>
+  </section>
 
-  <h2>Latest Articles</h2>
-  <ul class="article-list">
-    <li>
-      <h3><a href="/articles/reply-to-whatsapp-enquiries-faster/">How to Reply to WhatsApp Enquiries Faster: A Guide for Gujarat Businesses</a></h3>
-      <p class="article-meta">24 November 2026 · 6 min read</p>
-      <p>Seven practical fixes for slow WhatsApp replies, a reply-time target to start with and a plan for this week.</p>
-    </li>
-    <li>
-      <h3><a href="/articles/lead-scoring-hot-warm-cold/">Lead Scoring Explained: How to Sort Hot, Warm and Cold Leads</a></h3>
-      <p class="article-meta">24 November 2026 · 5 min read</p>
-      <p>What hot, warm and cold leads mean, and a simple scoring sheet you can copy for your own sales team.</p>
-    </li>
-    <li>
-      <h3><a href="/articles/lead-follow-up-checklist-ahmedabad/">Lead Follow-Up Checklist for Ahmedabad Businesses</a></h3>
-      <p class="article-meta">24 November 2026 · 5 min read</p>
-      <p>A before, during and after checklist, a two-week timing plan and notes for Bopal and SG Highway.</p>
-    </li>
-  </ul>
+  <section class="section" data-label="Articles">
+    <h2>Latest Articles</h2>
+    <ul class="article-list">
+      <li>
+        <h3><a href="/articles/reply-to-whatsapp-enquiries-faster/">How to Reply to WhatsApp Enquiries Faster: A Guide for Gujarat Businesses</a></h3>
+        <p class="article-meta">24 November 2026 · 6 min read</p>
+        <p>Seven practical fixes for slow WhatsApp replies, a reply-time target to start with and a plan for this week.</p>
+      </li>
+      <li>
+        <h3><a href="/articles/lead-scoring-hot-warm-cold/">Lead Scoring Explained: How to Sort Hot, Warm and Cold Leads</a></h3>
+        <p class="article-meta">24 November 2026 · 5 min read</p>
+        <p>What hot, warm and cold leads mean, and a simple scoring sheet you can copy for your own sales team.</p>
+      </li>
+      <li>
+        <h3><a href="/articles/lead-follow-up-checklist-ahmedabad/">Lead Follow-Up Checklist for Ahmedabad Businesses</a></h3>
+        <p class="article-meta">24 November 2026 · 5 min read</p>
+        <p>A before, during and after checklist, a two-week timing plan and notes for Bopal and SG Highway.</p>
+      </li>
+    </ul>
+  </section>
 
-  <h2>What We Write About</h2>
-  <ul class="features">
-    <li><strong>Customer support on WhatsApp:</strong> how to reply faster and what a chatbot such as <a href="/ai-app-1/">AI App 1</a> can and cannot do.</li>
-    <li><strong>Leads and sales follow-up:</strong> how to sort, track and follow up enquiries, and how <a href="/ai-app-2/">AI App 2</a> helps a sales team.</li>
-    <li><strong>Local guides:</strong> follow-up tips for businesses in <a href="/locations/gujarat/ahmedabad/">Ahmedabad</a> and the other cities on our <a href="/locations/gujarat/">areas we serve in Gujarat</a> page.</li>
-  </ul>
+  <section class="section" data-label="Topics">
+    <h2>What We Write About</h2>
+    <ul class="features">
+      <li><strong>Customer support on WhatsApp:</strong> how to reply faster and what a chatbot such as <a href="/ai-app-1/">AI App 1</a> can and cannot do.</li>
+      <li><strong>Leads and sales follow-up:</strong> how to sort, track and follow up enquiries, and how <a href="/ai-app-2/">AI App 2</a> helps a sales team.</li>
+      <li><strong>Local guides:</strong> follow-up tips for businesses in <a href="/locations/gujarat/ahmedabad/">Ahmedabad</a> and the other cities on our <a href="/locations/gujarat/">areas we serve in Gujarat</a> page.</li>
+    </ul>
+  </section>
 
-  <h2>Share and Link to Our Guides</h2>
-  <p>If you write for a business blog, an association newsletter or a local community page, you are welcome to link to any of these guides. A link that uses the title of the guide, or a short description of what it covers, is the most useful for your readers.</p>
+  <section class="section" data-label="Share">
+    <h2>Share and Link to Our Guides</h2>
+    <p>If you write for a business blog, an association newsletter or a local community page, you are welcome to link to any of these guides. A link that uses the title of the guide, or a short description of what it covers, is the most useful for your readers.</p>
+  </section>
 </main>
 
-<footer>
-  <a href="/ai-app-1/">AI App 1</a>
-  <a href="/ai-app-2/">AI App 2</a>
-  <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
-  <a href="/articles/">Articles</a>
-  <a href="/contact/">Book a Free Demo</a>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/ai-app-1/">AI App 1</a>
+      <a href="/ai-app-2/">AI App 2</a>
+      <a href="/locations/gujarat/">Areas We Serve in Gujarat</a>
+      <a href="/articles/">Articles</a>
+      <a href="/contact/">Book a Free Demo</a>
+    </nav>
+    <p class="site-footer__copy">&copy; <span data-year>2026</span> Ortheon AI. All rights reserved.</p>
+  </div>
 </footer>
 
 </body>
