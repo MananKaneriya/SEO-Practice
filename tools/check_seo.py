@@ -42,7 +42,7 @@ ROOT = Path(__file__).resolve().parent.parent
 MAX_TITLE, MAX_DESC = 59, 149                # "under 60" and "under 150" characters
 WARN_OG_TITLE, WARN_OG_DESC = 70, 200        # og:title / twitter:title, og:description / twitter:description
 
-# exact copy from the brief: <title> | og:title = twitter:title | og:description = twitter:description | meta description
+# mirrors the current page copy: <title> | og:title = twitter:title | og:description = twitter:description | meta description
 COPY = {
     "index.html": ("Ortheon AI – AI Apps for Customer Support and Sales", "Ortheon AI – AI Apps for Customer Support and Sales",
                    "An AI chatbot and an AI sales app for Gujarat businesses. Book a free demo.",

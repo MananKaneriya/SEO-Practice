@@ -47,7 +47,7 @@ and fails on broken links, leftover placeholders, FAQ/schema mismatches and copi
 
 ## Adding a new city or area
 1. Copy an existing city/area folder, rename it, and write genuinely different copy for it.
-2. Update the title, description, keywords, canonical, og:*, twitter:*, JSON-LD, breadcrumb and H1.
+2. Update the title, description, canonical, og:*, twitter:*, JSON-LD, breadcrumb and H1.
 3. Add its og:image path to the page, then run `python tools/make_og_images.py` (1200x630 JPG, under 300 KB).
 4. Link it from the hub / city page and add it to sitemap.xml.
 5. Run `python tools/check_seo.py`.
