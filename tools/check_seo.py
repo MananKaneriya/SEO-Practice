@@ -562,7 +562,8 @@ def main():
                 bad(bool(p.times) and p.times[0] == d_pub and all(t in (d_pub, d_mod) for t in p.times),
                     "visible <time datetime> does not match datePublished (and dateModified, if it is shown)")
                 pub = post.get("publisher", {})
-                bad(post.get("author", {}).get("name") == BRAND and pub.get("name") == BRAND
+                author = post.get("author", {})
+                bad((author.get("name") == BRAND or author.get("worksFor", {}).get("name") == BRAND) and pub.get("name") == BRAND
                     and pub.get("logo", {}).get("url") == SITE_URL + "/images/logo.png",
                     "BlogPosting author / publisher / publisher logo wrong")
                 bad(post.get("mainEntityOfPage", {}).get("@id") == url, "BlogPosting mainEntityOfPage must be the article's own URL")

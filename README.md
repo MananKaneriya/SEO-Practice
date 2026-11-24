@@ -54,7 +54,7 @@ and fails on broken links, leftover placeholders, FAQ/schema mismatches and copi
 
 ## Articles and backlinks
 Every article is written to do two jobs: be useful enough that other sites want to link to it, and pass
-that link value on to a page that sells something. The three starter articles are a small topic cluster:
+that link value on to a page that sells something. The first three articles are a small topic cluster, and the fourth (stop-losing-whatsapp-indiamart-leads-ahmedabad) is the pillar post that links to all three:
 each links to a product or location page, to the demo page and to the other two articles, and the product
 and home pages link back to them.
 
@@ -63,6 +63,7 @@ and home pages link back to them.
 | reply-to-whatsapp-enquiries-faster | /ai-app-1/ | Reply-time table and a seven-fix list | "how to reply to WhatsApp enquiries faster" |
 | lead-scoring-hot-warm-cold | /ai-app-2/ | A scoring sheet people can copy | "lead scoring sheet" |
 | lead-follow-up-checklist-ahmedabad | /locations/gujarat/ahmedabad/ (and its Bopal and SG Highway pages) | A checklist and a two-week timing plan | "lead follow-up checklist for Ahmedabad businesses" |
+| stop-losing-whatsapp-indiamart-leads-ahmedabad | /locations/gujarat/ahmedabad/, /ai-app-1/ and /ai-app-2/ (the pillar post: it links to the other three) | A six-step system, a WhatsApp 24-hour rule note and a DPDP Rules explainer | "stop losing WhatsApp and IndiaMART leads in Ahmedabad" |
 
 Ask for links to the article itself, not to the home page, and vary the anchor text between outreach emails.
 Good places to ask: business and trade association newsletters, local SME and startup blogs, and Gujarat

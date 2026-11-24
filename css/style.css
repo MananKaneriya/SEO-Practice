@@ -442,6 +442,13 @@ main > article { display: contents; }
   .section > .table-wrap,
   .section > .toc,
   .section > .towns { grid-column: 1 / -1; }
+
+  /* when two text blocks follow the heading, let the heading span both rows so a tall
+     heading does not push the second block down (no effect on sections with cards) */
+  .section > h2:has(+ :not(.features, .steps, .areas, .tags, .districts, .article-list, .table-wrap, .toc)
+                    + :not(.features, .steps, .areas, .tags, .districts, .article-list, .table-wrap, .toc, .towns)) {
+    grid-row: span 2;
+  }
 }
 
 /* ---------- 9. Bordered card grids (features, industries, steps) ---------- */
@@ -957,3 +964,9 @@ main .toc li a { text-decoration: none; }
   .page-hero { padding: 72px var(--gutter) 56px; min-height: 340px; }
   .page-hero .hero__target { top: 0; right: -34vw; width: 100vw; transform: none; }
 }
+
+/* callout (notes inside articles) */
+.callout { padding: 20px 24px; border: 1px solid var(--line); border-left: 2px solid var(--accent); background: var(--panel); color: var(--text-2); }
+.callout p { max-width: none; }
+.callout strong { color: var(--text); }
+.section > .callout { margin-top: 8px; }
