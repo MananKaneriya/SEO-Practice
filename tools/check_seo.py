@@ -3,12 +3,12 @@
 Run from anywhere:   python tools/check_seo.py
 Only needs Python 3 (no packages). Exit code 0 = everything passes, 1 = something failed.
 
-Per-page table:  <title> (max 45), og:title (max 35), og:description (max 45), meta description
-                 (max 115), og:image file exists, image is a real 1200x630 JPEG, image size in KB,
+Per-page table:  <title> (under 60), og:title (warn over 70), og:description (warn over 200), meta description
+                 (under 150), og:image file exists, image is a real 1200x630 JPEG, image size in KB,
                  og:image == twitter:image, every URL on the page uses the live domain.
 
-Also checks:     exact copy for the pages in the brief, og:image:secure_url / :type / :width / :height,
-                 robots.txt ("Allow: /", no "Disallow:"), noindex meta on every page, the old
+Also checks:     exact copy for the pages in the brief, og:image:width / :height (and :secure_url / :type when present),
+                 robots.txt ("Allow: /", no "Disallow:"), "index, follow" robots meta on every page, the old
                  domain nowhere in any file, canonical == og:url == own URL, h1 count, word counts,
                  sitemap, every <a href> resolves, FAQPage == visible FAQ, JSON-LD types, heading
                  order, breadcrumb schema == visible breadcrumb, brand spelling, banned wording,
@@ -37,35 +37,37 @@ OLD_BRAND = "ot" + "theon"
 OLD_DOMAIN = "seo-practice" + ".vercel.app"        # the old domain, i.e. without the 2
 ROOT = Path(__file__).resolve().parent.parent
 
-# one-line social previews: maximum lengths, counted after HTML entities are decoded
-MAX_TITLE, MAX_OG_TITLE, MAX_OG_DESC, MAX_DESC = 45, 35, 45, 115
+# search/social previews, counted after HTML entities are decoded ("&amp;" is 1 character, as Google shows it).
+# <title> and meta description FAIL when too long; og:/twitter: text only produces a WARNING.
+MAX_TITLE, MAX_DESC = 59, 149                # "under 60" and "under 150" characters
+WARN_OG_TITLE, WARN_OG_DESC = 70, 200        # og:title / twitter:title, og:description / twitter:description
 
 # exact copy from the brief: <title> | og:title = twitter:title | og:description = twitter:description | meta description
 COPY = {
-    "index.html": ("AI Chatbot & CRM for Business | Ortheon AI", "AI Chatbot & CRM for Business",
-                   "AI chatbot and CRM for Gujarat businesses.",
-                   "AI chatbot and lead management apps for Gujarat businesses. Reply 24/7 and never miss a lead. Book a free demo."),
-    "ai-app-1/index.html": ("WhatsApp AI Chatbot | Ortheon AI", "WhatsApp AI Chatbot for Business",
-                            "Reply to customers 24/7 on WhatsApp.",
-                            "WhatsApp and website AI chatbot that replies 24/7 in Gujarati, Hindi and English. Book a free demo."),
-    "ai-app-2/index.html": ("AI Lead Management App | Ortheon AI", "AI Lead Management App",
-                            "Capture, score and follow up every lead.",
-                            "Capture leads from every channel, score them with AI and never miss a follow-up. Book a free demo."),
-    "contact/index.html": ("Book a Free Demo | Ortheon AI", "Book a Free Demo",
-                           "See AI App 1 and AI App 2 in action.",
-                           "Book a free demo of Ortheon AI's chatbot and lead management apps for your business."),
-    "locations/gujarat/index.html": ("AI Chatbot & CRM in Gujarat | Ortheon AI", "AI Chatbot & CRM in Gujarat",
-                                     "AI chatbot and CRM across Gujarat.",
-                                     "AI chatbot and lead management software for businesses in all 34 districts of Gujarat. Book a free demo."),
-    "locations/gujarat/ahmedabad/index.html": ("AI Chatbot & CRM in Ahmedabad | Ortheon AI", "AI Chatbot & CRM in Ahmedabad",
-                                               "Reply 24/7 and never miss a lead.",
-                                               "WhatsApp AI chatbot and lead management for Ahmedabad businesses. Reply 24/7 in Gujarati. Book a free demo."),
-    "locations/gujarat/ahmedabad/bopal/index.html": ("AI Chatbot & CRM in Bopal | Ortheon AI", "AI Chatbot & CRM in Bopal",
-                                                     "Never miss a site-visit enquiry.",
-                                                     "AI chatbot and CRM for Bopal real estate, clinics, schools and shops. Reply to every enquiry 24/7. Free demo."),
-    "locations/gujarat/ahmedabad/sg-highway/index.html": ("AI Chatbot & CRM, SG Highway | Ortheon AI", "AI Chatbot & CRM on SG Highway",
-                                                          "Capture every lead from your office.",
-                                                          "AI chatbot and CRM for SG Highway offices, showrooms and developers. Capture every lead 24/7. Book a free demo."),
+    "index.html": ("Ortheon AI – AI Apps for Customer Support and Sales", "Ortheon AI – AI Apps for Customer Support and Sales",
+                   "An AI chatbot and an AI sales app for Gujarat businesses. Book a free demo.",
+                   "Ortheon AI builds an AI customer support chatbot and a sales and lead management app for Gujarat businesses. Reply faster, sell more. Free demo."),
+    "ai-app-1/index.html": ("AI App 1 – AI Customer Support Assistant | Ortheon AI", "AI App 1 – AI Customer Support Assistant | Ortheon AI",
+                            "A 24/7 AI chatbot for WhatsApp, website chat and Instagram in English, Hindi and Gujarati.",
+                            "AI App 1: customer support chatbot for WhatsApp, website chat and Instagram. Replies 24/7 in English, Hindi and Gujarati. Book a free demo."),
+    "ai-app-2/index.html": ("AI App 2 – AI Sales & Lead Management | Ortheon AI", "AI App 2 – AI Sales & Lead Management | Ortheon AI",
+                            "Capture leads from every channel, score them and never miss a follow-up with AI App 2.",
+                            "AI App 2 collects leads from WhatsApp, IndiaMART, Facebook and Google Ads, scores them and reminds your team to follow up. Book a free demo."),
+    "contact/index.html": ("Book a Free Demo – AI Chatbot & Sales App | Ortheon AI", "Book a Free Demo – AI Chatbot & Sales App | Ortheon AI",
+                           "Book a free demo of Ortheon AI and see how it works for your business.",
+                           "Book a free demo of Ortheon AI's customer support chatbot and sales app, with online setup and training. Tell us your city and business."),
+    "locations/gujarat/index.html": ("AI App 1 & AI App 2 for Businesses in Gujarat | Ortheon AI", "AI App 1 & AI App 2 Across Gujarat | Ortheon AI",
+                                     "AI customer support and sales apps for all 34 districts of Gujarat. Book a free demo.",
+                                     "AI chatbot and lead management apps for businesses across all 34 districts of Gujarat, set up online. Book a free demo with Ortheon AI."),
+    "locations/gujarat/ahmedabad/index.html": ("WhatsApp Chatbot & CRM Software in Ahmedabad | Ortheon AI", "AI Chatbot & Lead Management for Ahmedabad Businesses",
+                                               "Reply to customers 24/7 and follow up every lead. Built for Ahmedabad businesses. Free demo.",
+                                               "WhatsApp AI chatbot & CRM for Ahmedabad businesses. Reply 24/7 in Gujarati, Hindi & English. Book a free demo."),
+    "locations/gujarat/ahmedabad/bopal/index.html": ("WhatsApp Chatbot & CRM in Bopal, Ahmedabad | Ortheon AI", "AI Chatbot & CRM for Businesses in Bopal, Ahmedabad",
+                                                     "Never miss a site-visit or appointment enquiry. AI chatbot and CRM for Bopal businesses.",
+                                                     "AI chatbot and lead management for Bopal, Ahmedabad businesses: real estate, clinics, schools and retail. Reply 24/7 in Gujarati. Book a free demo."),
+    "locations/gujarat/ahmedabad/sg-highway/index.html": ("AI Chatbot & CRM on SG Highway, Ahmedabad | Ortheon AI", "AI Chatbot & CRM for SG Highway Businesses, Ahmedabad",
+                                                          "Capture and follow up every lead from your SG Highway office or showroom. Free demo.",
+                                                          "AI chatbot and lead management for SG Highway, Ahmedabad offices, IT firms, showrooms and developers. Capture every lead 24/7. Book a free demo."),
 }
 MIN_WORDS = {"city": 400, "area": 300, "article": 700, "articles-hub": 100}
 ISO_DATE = r"\d{4}-\d{2}-\d{2}"
@@ -79,7 +81,6 @@ CTA_LINK = ("/contact/", "Book a free demo")
 PLAN = {
     "locations/gujarat/ahmedabad/index.html": dict(
         meta={
-            "keywords": "whatsapp chatbot ahmedabad, ai chatbot ahmedabad, crm software ahmedabad, lead management software ahmedabad, customer support automation ahmedabad, ortheon ai",
             "og:image": SITE_URL + "/images/og/whatsapp-chatbot-crm-ahmedabad.jpg",
             "og:image:alt": "Ortheon AI chatbot and CRM dashboard for businesses in Ahmedabad",
         },
@@ -96,7 +97,6 @@ PLAN = {
         ]),
     "locations/gujarat/ahmedabad/bopal/index.html": dict(
         meta={
-            "keywords": "whatsapp chatbot bopal, ai chatbot bopal ahmedabad, crm software bopal, lead management bopal, chatbot for real estate bopal",
             "og:image": SITE_URL + "/images/og/whatsapp-chatbot-crm-bopal-ahmedabad.jpg",
             "og:image:alt": "Ortheon AI chatbot answering a site-visit enquiry for a Bopal real estate project",
         },
@@ -112,7 +112,6 @@ PLAN = {
         ]),
     "locations/gujarat/ahmedabad/sg-highway/index.html": dict(
         meta={
-            "keywords": "ai chatbot sg highway, crm software sg highway ahmedabad, whatsapp chatbot sg highway, lead management sg highway, sales crm ahmedabad",
             "og:image": SITE_URL + "/images/og/whatsapp-chatbot-crm-sg-highway-ahmedabad.jpg",
             "og:image:alt": "Ortheon AI lead dashboard for a sales team on SG Highway, Ahmedabad",
         },
@@ -358,6 +357,7 @@ def main():
     sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
     in_sitemap = set(re.findall(r"<loc>\s*(.*?)\s*</loc>", sitemap))
     problems, rows, parsed = [], [], {}
+    warnings = []
     place_names = set()
 
     # first pass: parse + collect place names (for the copied-sentence check)
@@ -413,10 +413,14 @@ def main():
         bad(img_ok, f"og:image file missing: {og_img}")
         bad(host_ok, "a URL on this page does not use " + HOST)
         # one-line social previews
-        bad(0 < t_len <= MAX_TITLE, f"<title> is {t_len} chars (max {MAX_TITLE}): {p.title}")
-        bad(0 < ogt_len <= MAX_OG_TITLE, f"og:title is {ogt_len} chars (max {MAX_OG_TITLE}): {p.meta.get('og:title')}")
-        bad(0 < ogd_len <= MAX_OG_DESC, f"og:description is {ogd_len} chars (max {MAX_OG_DESC}): {p.meta.get('og:description')}")
-        bad(0 < d_len <= MAX_DESC, f"meta description is {d_len} chars (max {MAX_DESC}): {p.meta.get('description')}")
+        bad(0 < t_len <= MAX_TITLE, f"<title> is {t_len} chars (must be under {MAX_TITLE + 1}): {p.title}")
+        for label, text, limit in (("og:title", p.meta.get("og:title", ""), WARN_OG_TITLE),
+                                   ("twitter:title", p.meta.get("twitter:title", ""), WARN_OG_TITLE),
+                                   ("og:description", p.meta.get("og:description", ""), WARN_OG_DESC),
+                                   ("twitter:description", p.meta.get("twitter:description", ""), WARN_OG_DESC)):
+            if len(text) > limit:
+                warnings.append(f"{rel}: {label} is {len(text)} chars (over {limit}): {text}")
+        bad(0 < d_len <= MAX_DESC, f"meta description is {d_len} chars (must be under {MAX_DESC + 1}): {p.meta.get('description')}")
         bad("…" not in p.title + p.meta.get("description", "") + p.meta.get("og:title", "") + p.meta.get("og:description", "")
             and "..." not in p.title + p.meta.get("description", ""), "a title/description contains an ellipsis")
         if rel in COPY:
@@ -427,11 +431,13 @@ def main():
                                      ("twitter:description", p.meta.get("twitter:description"), want_ogd),
                                      ("meta description", p.meta.get("description"), want_d)):
                 bad(got == want, f"{label} differs from the brief:\n        got  {got!r}\n        want {want!r}")
-        bad(has_kw, "no meta keywords")
+        if has_kw:
+            warnings.append(f"{rel}: has a meta keywords tag (Google ignores it; safe to remove)")
         bad(len(h1s) == 1, f"{len(h1s)} <h1> tags")
         bad(in_map, "not in sitemap.xml")
         bad(left == 0, f"{left} bracket/todo/placeholder leftovers")
-        bad(p.meta.get("robots") == "noindex, nofollow", "robots meta is not 'noindex, nofollow'")
+        bad(p.meta.get("robots") == "index, follow" and "noindex" not in p.meta.get("robots", ""),
+            f"robots meta is not 'index, follow' (found {p.meta.get('robots')!r}); it must not contain noindex")
         bad(p.meta.get("author") == BRAND, f"meta author is not {BRAND}")
         bad(p.stylesheet == "/css/style.css", "stylesheet link missing")
         want_og_type = "article" if kind == "article" else "website"
@@ -439,17 +445,20 @@ def main():
             f"og:type must be {want_og_type!r}, and og:site_name / og:locale must be set")
         bad(p.meta.get("og:image:width") == "1200" and p.meta.get("og:image:height") == "630" and p.meta.get("og:image:alt"),
             "og:image width/height/alt wrong")
-        bad(p.meta.get("og:image:secure_url") == og_img, "og:image:secure_url missing or different from og:image")
-        bad(p.meta.get("og:image:type") == "image/jpeg", "og:image:type missing or not image/jpeg")
+        if "og:image:secure_url" in p.meta:
+            bad(p.meta["og:image:secure_url"] == og_img, "og:image:secure_url is different from og:image")
+        if "og:image:type" in p.meta:
+            bad(p.meta["og:image:type"] == "image/jpeg", "og:image:type is not image/jpeg")
         bad(re.fullmatch(r"/images/og/[a-z0-9-]+\.jpg", urlparse(og_img).path or ""), f"og:image path must be lowercase /images/og/<name>.jpg: {og_img}")
         bad(p.meta.get("og:title") == p.meta.get("twitter:title") and p.meta.get("og:title"), "og:title != twitter:title")
         bad(p.meta.get("og:description") == p.meta.get("twitter:description") and p.meta.get("og:description"),
             "og:description != twitter:description")
         bad(p.meta.get("twitter:card") == "summary_large_image" and tw_same, "twitter:card wrong, or twitter:image != og:image")
-        bad("<title>" in raw and raw.index("<title>") < raw.index('name="description"') < raw.index('name="keywords"')
-            < raw.index('name="robots"') < raw.index('name="author"') < raw.index('rel="canonical"')
-            < raw.index('property="og:type"') < raw.index('name="twitter:card"') < raw.index('rel="stylesheet"')
-            < raw.index("application/ld+json"), "head tags are not in the required order")
+        head_order = ["<title>", 'name="description"', 'name="keywords"', 'name="robots"', 'name="author"', 'rel="canonical"',
+                      'property="og:type"', 'name="twitter:card"', 'rel="stylesheet"', "application/ld+json"]
+        head_pos = [raw.find(m) for m in head_order if m != 'name="keywords"' or 'name="keywords"' in raw]
+        bad(all(a >= 0 for a in head_pos) and all(a < b for a, b in zip(head_pos, head_pos[1:])),
+            "head tags are not in the required order")
 
         # --- image file: a real JPEG, exactly 1200x630, 3 colour channels, under the size limit
         if img_path.is_file():
@@ -617,7 +626,7 @@ def main():
         if not (u.startswith(SITE_URL + "/") and u.endswith("/")):
             problems.append(f"sitemap.xml URL not absolute with trailing slash: {u}")
     # robots.txt must let the social-preview bots (X, Facebook, LinkedIn, WhatsApp) fetch the images;
-    # the noindex meta tag on every page is what keeps this practice site out of Google
+    # the pages themselves carry <meta name="robots" content="index, follow">
     robots = [ln.strip() for ln in (ROOT / "robots.txt").read_text(encoding="utf-8").splitlines() if ln.strip()]
     if robots != ["User-agent: *", "Allow: /", f"Sitemap: {SITE_URL}/sitemap.xml"]:
         problems.append(f"robots.txt must be exactly: User-agent: * / Allow: / / Sitemap: {SITE_URL}/sitemap.xml (found {robots})")
@@ -663,7 +672,7 @@ def main():
         problems.append(f"Ahmedabad area pages must be exactly bopal and sg-highway, found {sorted(ahm_areas)}")
 
     # --- print the table
-    head = ("path", f"title(<={MAX_TITLE})", f"og:title(<={MAX_OG_TITLE})", f"og:desc(<={MAX_OG_DESC})",
+    head = ("path", f"title(<={MAX_TITLE})", f"og:title(warn>{WARN_OG_TITLE})", f"og:desc(warn>{WARN_OG_DESC})",
             f"meta desc(<={MAX_DESC})", "og:image exists", "1200x630 JPEG", "KB", "og==twitter img", "domain ok")
     yn = lambda v: "yes" if v else "NO"
     table = [head] + [(r[0], r[1], r[2], r[3], r[4], yn(r[5]), yn(r[6]), r[7], yn(r[8]), yn(r[9])) for r in rows]
@@ -673,6 +682,11 @@ def main():
         if n == 0:
             print("  ".join("-" * w for w in widths))
     print(f"\ndomain ok = every URL in the page uses {HOST}. Lengths are counted after HTML entities are decoded.")
+
+    if warnings:
+        print(f"\nWARNINGS ({len(warnings)}) - not failures:")
+        for m in warnings:
+            print("  -", m)
 
     if problems:
         print(f"\nFAILED ({len(problems)}):")

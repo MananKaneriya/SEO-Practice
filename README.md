@@ -1,7 +1,7 @@
 # Ortheon AI – Gujarat SEO practice site (plain HTML)
 
 Static site, no frameworks and no build step. Deployed on Vercel from GitHub.
-Every page is a plain `index.html`. All pages are `noindex, nofollow` because this is a practice site.
+Every page is a plain `index.html`. All pages are `index, follow` and robots.txt allows crawling.
 
 ## Open it
 1. VS Code → File → Open Folder → choose this `seo-practice` folder (it must be the root).
@@ -19,7 +19,7 @@ Every page is a plain `index.html`. All pages are `noindex, nofollow` because th
 - articles/<slug>/index.html               One blog post each (see "Articles and backlinks" below)
 - images/og/                               1200x630 social-share images (placeholders), one per page
 - images/logo.png                          512x512 logo (placeholder)
-- sitemap.xml, robots.txt                  robots.txt blocks everything while this is a practice site
+- sitemap.xml, robots.txt                  robots.txt allows all crawlers and points to the sitemap
 - css/style.css                            Shared design system: tokens (colours, fonts, sizes) + every component
 - js/site.js                               Clock, mobile menu, FAQ accordion, scroll fade-up (pages work without it)
 - tools/check_seo.py                       SEO checker – run it before every push
@@ -69,12 +69,12 @@ Ask for links to the article itself, not to the home page, and vary the anchor t
 Good places to ask: business and trade association newsletters, local SME and startup blogs, and Gujarat
 business directories. Keep a log of who you asked, what page you asked them to link to, and the result.
 
-**Backlinks do not count yet.** Every page is `noindex, nofollow`, so Google will not index the articles or
-pass their link value on. Treat this as practice until you follow "Going live later" below.
+**Backlinks can count now.** Every page is `index, follow` and robots.txt allows crawling, so Google can index the articles and
+pass their link value on.
 
 ### Adding a new article
 1. Copy an existing `articles/<slug>/` folder. The slug is lowercase with hyphens and starts with the keyword.
-2. Rewrite the copy (700+ words), then update `<title>` (max 45), description (max 115), keywords,
+2. Rewrite the copy (700+ words), then update `<title>` (under 60 characters), description (under 150 characters),
    canonical, `og:*`, `twitter:*`, the breadcrumb and the FAQ (visible text and FAQPage schema must match).
 3. Set the dates in all three places: `article:published_time` / `article:modified_time`, the BlogPosting
    schema, and the visible `<time datetime>`. The BlogPosting `headline` must equal the H1.
@@ -84,6 +84,6 @@ pass their link value on. Treat this as practice until you follow "Going live la
    then add the URL to `sitemap.xml`.
 6. Run `python tools/make_og_images.py` for the 1200x630 image, then `python tools/check_seo.py`.
 
-## Going live later
-Remove `<meta name="robots" content="noindex, nofollow">` from every page and change
-`Disallow: /` to `Allow: /` in robots.txt.
+## Indexing is already enabled
+Every page uses `<meta name="robots" content="index, follow">` and robots.txt uses
+`Allow: /`, so the site can be crawled and indexed.
