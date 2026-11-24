@@ -431,8 +431,7 @@ def main():
                                      ("twitter:description", p.meta.get("twitter:description"), want_ogd),
                                      ("meta description", p.meta.get("description"), want_d)):
                 bad(got == want, f"{label} differs from the brief:\n        got  {got!r}\n        want {want!r}")
-        if has_kw:
-            warnings.append(f"{rel}: has a meta keywords tag (Google ignores it; safe to remove)")
+        # a meta keywords tag is allowed: no warning and no failure (head_order below still checks where it sits)
         bad(len(h1s) == 1, f"{len(h1s)} <h1> tags")
         bad(in_map, "not in sitemap.xml")
         bad(left == 0, f"{left} bracket/todo/placeholder leftovers")
